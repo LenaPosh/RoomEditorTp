@@ -1,5 +1,12 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
-
+import {ChangeEvent, FormEvent, useState} from 'react';
+import {
+    PageContainer,
+    FormContainer,
+    FormTitle,
+    StyledForm,
+    StyledInput,
+    SubmitButton, GlobalStyle
+} from './FormStyles';
 interface State {
     name: string;
     email: string;
@@ -33,60 +40,55 @@ function RegistrationForm() {
     };
 
     return (
-        <div className="page-container">
-            <div className="form-container">
-                <div className="form-title">Регистрация</div>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                        <input
+        <>
+            <GlobalStyle/>
+            <PageContainer>
+                <FormContainer>
+                    <FormTitle>Регистрация</FormTitle>
+                    <StyledForm onSubmit={handleSubmit}>
+                        <StyledInput
                             type="text"
                             id="name"
                             placeholder="Имя"
                             value={state.name}
                             onChange={(e) => handleChange(e, 'name')}
                         />
-                    </div>
-                    <div>
-                        <input
+                        <StyledInput
                             type="email"
                             id="email"
                             placeholder="E-mail"
                             value={state.email}
                             onChange={(e) => handleChange(e, 'email')}
                         />
-                    </div>
-                    <div>
-                        <input
+                        <StyledInput
                             type="tel"
                             id="phone"
                             placeholder="Телефон"
                             value={state.phone}
                             onChange={(e) => handleChange(e, 'phone')}
                         />
-                    </div>
-                    <div>
-                        <input
+                        <StyledInput
                             type="password"
                             id="password"
                             placeholder="Пароль"
                             value={state.password}
                             onChange={(e) => handleChange(e, 'password')}
                         />
-                    </div>
-                    <div>
-                        <input
+                        <StyledInput
                             type="password"
                             id="confirmPassword"
                             placeholder="Повторите пароль"
                             value={state.confirmPassword}
                             onChange={(e) => handleChange(e, 'confirmPassword')}
                         />
-                    </div>
-                    <button type="submit">Приступить к работе</button>
-                </form>
-            </div>
-        </div>
+                        <SubmitButton type="submit">Приступить к работе</SubmitButton>
+                    </StyledForm>
+                </FormContainer>
+            </PageContainer>
+        </>
+
     );
 }
 
 export default RegistrationForm;
+
