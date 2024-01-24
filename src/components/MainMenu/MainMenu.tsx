@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {GlobalStyle} from '../form/FormStyles';
 import {MenuLeft} from './MenuLeft'
 import SubMenuBuild from "./SubMenuBuild";
+import MainHeaderIcon from "./MainHeaderIcon";
 
 
 
@@ -34,6 +35,7 @@ export const MainMenu: React.FC = () => {
                 {/*{activeMenuItem === 'item2' && <SubmenuFinish onClose={handleCloseSubMenu} />}*/}
                 {/*{activeMenuItem === 'item3' && <SubmenuFurniture onClose={handleCloseSubMenu} />}*/}
                 {/*{activeMenuItem === 'item4' && <SubmenuSettings onClose={handleCloseSubMenu} />}*/}
+            <MainHeaderIcon/>
             </PageContainer>
         </>
     );
