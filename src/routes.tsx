@@ -6,11 +6,11 @@ import {MainMenuPage} from "./pages/MainMenuPage";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <SignInPage />
+        element: <MainMenuPage />
     },
     {
-        path: "/main-menu",
-        element: <MainMenuPage />
+        path: "/signin",
+        element: <SignInPage />
     },
     {
         path: '/registration',
