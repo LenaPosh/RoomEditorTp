@@ -5,9 +5,13 @@ import finishIcon from '../../img/Finishing.png';
 import furnitureIcon from '../../img/Furniture.png';
 import settingIcon from '../../img/Settings.png';
 
+type MenuLeftProps = {
+    onItemSelect: (itemName: string) => void;
+};
+
 const MenuLeftContainer = styled.div`
   width: 81px;
-  height: 322px;
+  height: 302px;
   flex-shrink: 0;
   border-radius: 20px;
   background: #FFF;
@@ -23,6 +27,7 @@ const MenuItem = styled.div<{ isActive: boolean }>`
   cursor: pointer;
   &:hover {
     background-color: #e8e8e8;
+    border-radius: 20px;
   }
 `;
 
@@ -44,10 +49,12 @@ const StyledIcons = styled.img`
 `;
 
 
-export const MenuLeft = () => {
+export const MenuLeft: React.FC<MenuLeftProps> = ({ onItemSelect }) => {
     const [activeItem, setActiveItem] = useState<string | null>(null);
+
     const handleMenuItemClick = (itemName: string) => {
         setActiveItem(itemName);
+        onItemSelect(itemName);
     };
     return (
         <MenuLeftContainer>

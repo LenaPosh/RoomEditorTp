@@ -1,7 +1,9 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {GlobalStyle} from '../form/FormStyles';
 import {MenuLeft} from './MenuLeft'
+import SubMenuBuild from "./SubMenuBuild";
+
 
 
 const PageContainer = styled.div`
@@ -13,15 +15,29 @@ const PageContainer = styled.div`
 `;
 
 export const MainMenu: React.FC = () => {
+    const [activeMenuItem, setActiveMenuItem] = useState<string | null>(null);
+
+    const handleMenuClick = (itemName: string) => {
+        setActiveMenuItem(itemName);
+    };
+
+    const handleCloseSubMenu = () => {
+        setActiveMenuItem(null);
+    };
+
     return (
         <>
             <GlobalStyle />
             <PageContainer>
-                <MenuLeft/>
-
+                <MenuLeft onItemSelect={handleMenuClick} />
+                {activeMenuItem === 'item1' && <SubMenuBuild activeItem={activeMenuItem} onClose={handleCloseSubMenu} />}
+                {/*{activeMenuItem === 'item2' && <SubmenuFinish onClose={handleCloseSubMenu} />}*/}
+                {/*{activeMenuItem === 'item3' && <SubmenuFurniture onClose={handleCloseSubMenu} />}*/}
+                {/*{activeMenuItem === 'item4' && <SubmenuSettings onClose={handleCloseSubMenu} />}*/}
             </PageContainer>
         </>
     );
 };
 
 export default MainMenu;
+
