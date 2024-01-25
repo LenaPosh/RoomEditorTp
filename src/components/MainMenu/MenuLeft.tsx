@@ -32,6 +32,7 @@ const MenuLeftContainer = styled.div`
     background: #FFF;
     padding-top: 14px;
     padding-bottom: 14px;
+    z-index: 10;
   
 
     &::before {

@@ -22,6 +22,18 @@ const SubMenuContainer = styled.div`
   margin-left: 20px;
   padding: 10px;
   box-sizing: border-box;
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 124px;
+    margin: 0;
+    padding-top: 14px;
+    border-radius: 20px 20px 0 0;
+    padding-bottom: 14px;
+    overflow-y: auto; 
+    z-index: 10;
+  }
 `;
 
 const SubMenuItem = styled.div<{ isActive: boolean }>`

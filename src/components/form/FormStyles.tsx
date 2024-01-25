@@ -1,9 +1,12 @@
 import styled, {createGlobalStyle} from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
-  html, body {
+  html, body, #root {
+    height: 100%;
     margin: 0;
     padding: 0;
+    width: 100%; // Устанавливаем ширину для html и body на 100%
+    overflow-x: hidden; // Скрываем горизонтальный скролл
   }
 `;
 export const PageContainer = styled.div`
@@ -12,6 +15,12 @@ export const PageContainer = styled.div`
   align-items: center;
   height: 100vh;
   background-color: #ccc;
+  
+  @media (max-width: 780px) {
+    width: 100%; // Занимает всю ширину экрана
+    height: 100vh; // Занимает всю высоту экрана
+    background-color: #ccc;
+  }
 
 `;
 

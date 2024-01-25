@@ -21,6 +21,10 @@ const IconGroupContainer = styled.div`
   border-radius: 20px;
   background: #fff;
   margin-left: 20px;
+  
+  @media (max-width: 780px) {
+    display: none;
+  }
 `;
 
 const Icon = styled.img`
@@ -78,6 +82,19 @@ const Text = styled.div`
   position: absolute;
 `;
 
+const MainHeaderContainer = styled.div`
+  flex-direction: row;
+  width: 340px;
+  height: 50px;
+  @media (max-width: 780px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+  }
+`;
+
+
 const SecondIconGroupContainer = styled.div`
   display: flex;
   align-items: center;
@@ -89,6 +106,16 @@ const SecondIconGroupContainer = styled.div`
   margin-top: 20px;
   margin-left: 20px;
   padding: 0 5px;
+  
+  @media (max-width: 780px) {
+    flex-direction: column;
+    width: 50px;
+    height: auto; 
+    max-height: 280px; 
+    margin-left: auto;
+    margin-right: 5mm; 
+  }
+
 `;
 
 const FirstGreenIcon = styled.div`
@@ -104,6 +131,11 @@ const FirstGreenIcon = styled.div`
   &:hover {
     background-color: #8DC646;
   }
+
+  @media (max-width: 780px) {
+      transform: rotate(0deg);
+
+    }
 `;
 
 const Text2D = styled.div`
@@ -119,12 +151,21 @@ const Text2D = styled.div`
   ${SecondIconGroupContainer}:hover & {
     color: #fff;
   }
+
+  @media (max-width: 780px) {
+      transform: rotate(0deg);
+    }
 `;
 
 const GreenBar = styled.div`
   width: 1px;
   height: 50px;
   background: #8DC646;
+  @media (max-width: 780px) {
+    //transform: rotate(-90deg);
+    width: 50px;
+    height: 1px;
+  }
 `;
 
 const IconWrapper = styled.div`
@@ -153,13 +194,23 @@ const IconWrapper = styled.div`
 const ThirdIconGroupContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   width: 50px; 
   height: 50px;
   margin-top: 20px;
   margin-left: 20px;
   border-radius: 10px;
   background: #fff;
+  padding: 0 5px;
+
+  @media (max-width: 780px) {
+    flex-direction: column;
+    width: 50px;
+    height: auto;
+    max-height: 280px;
+    margin-left: auto;
+    margin-right: 5mm;
+  }
 `;
 
 const ThirdIconGroup = () => (
@@ -228,34 +279,37 @@ const MainHeaderIcon = () => {
 
                 <Icon src={settingIcon} alt="Setting Icon" />
             </IconGroupContainer>
-            <SecondIconGroupContainer>
-                <IconWrapper>
-                    <FirstGreenIcon>
-                        <Text2D>2D</Text2D>
-                    </FirstGreenIcon>
-                </IconWrapper>
-                <GreenBar/>
-                <IconWrapper>
-                    <IconThree/>
-                </IconWrapper>
-                <GreenBar/>
+            <MainHeaderContainer>
+                <SecondIconGroupContainer>
+                    <IconWrapper>
+                        <FirstGreenIcon>
+                            <Text2D>2D</Text2D>
+                        </FirstGreenIcon>
+                    </IconWrapper>
+                    <GreenBar/>
+                    <IconWrapper>
+                        <IconThree/>
+                    </IconWrapper>
+                    <GreenBar/>
 
-                <IconWrapper>
-                    <Icon src={notes} alt="Notes" />
-                </IconWrapper>
-                <GreenBar/>
+                    <IconWrapper>
+                        <Icon src={notes} alt="Notes" />
+                    </IconWrapper>
+                    <GreenBar/>
 
-                <IconWrapper>
-                    <Icon src={furniture} alt="Notes" />
-                </IconWrapper>
-                <GreenBar/>
+                    <IconWrapper>
+                        <Icon src={furniture} alt="Notes" />
+                    </IconWrapper>
+                    <GreenBar/>
 
-                <IconWrapper>
-                    <Icon src={window} alt="Window" />
-                </IconWrapper>
+                    <IconWrapper>
+                        <Icon src={window} alt="Window" />
+                    </IconWrapper>
 
-            </SecondIconGroupContainer>
-            <ThirdIconGroup/>
+                </SecondIconGroupContainer>
+                <ThirdIconGroup/>
+            </MainHeaderContainer>
+
         </>
 
     );
