@@ -15,6 +15,9 @@ const MenuContainer = styled.div`
   background-color: #fff;
   padding: 0 20px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const MenuCenter = styled.div`
