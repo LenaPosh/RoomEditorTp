@@ -127,6 +127,27 @@ const SecondIconGroupContainer = styled.div`
 
 `;
 
+const Text2D = styled.div`
+  color: #8DC646;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  transform: rotate(90deg);
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+ 
+  // ${SecondIconGroupContainer}:hover & {
+  //   color: #fff;
+  // }
+
+  @media (max-width: 780px) {
+      transform: rotate(0deg);
+    }
+`;
+
+
+
 const FirstGreenIcon = styled.div`
   width: 45px;
   height: 50px;
@@ -138,30 +159,21 @@ const FirstGreenIcon = styled.div`
   position: relative;
   border-radius: 10px 10px 0 0;
 
-  @media (max-width: 780px) {
-      transform: rotate(0deg);
-
-    }
-`;
-
-const Text2D = styled.div`
-  color: #8DC646;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-style: normal;
-  transform: rotate(90deg);
-  font-weight: 700;
-  line-height: normal;
-  position: absolute;
- 
-  ${SecondIconGroupContainer}:hover & {
+  &:hover {
+    //background-color: #8DC646;
     color: #fff;
-  }
 
+    ${Text2D} {
+      color: #fff;
+    }
+  }
+  
   @media (max-width: 780px) {
       transform: rotate(0deg);
+
     }
 `;
+
 
 const GreenBar = styled.div`
   width: 1px;
@@ -184,7 +196,7 @@ const IconWrapper = styled.div`
   
   &:hover {
     background-color: #8DC646;
-    min-width: 55px;
+    min-width: 50px;
 
     & > img {
       filter: brightness(0) invert(1);
