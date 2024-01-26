@@ -45,12 +45,24 @@ const MenuLeft = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 20px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 7px;
+  }
 `;
 
 const StyledImg = styled.img`
   height: 20px;
   width: auto;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+  }
 `;
+
 
 
 const TopMenu = () => {
