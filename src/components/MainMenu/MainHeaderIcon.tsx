@@ -31,8 +31,15 @@ const Icon = styled.img`
   width: 30px; 
   height: 30px;
   margin: 0 5px;
- 
+ `;
+
+const FirstGroupIcon = styled(Icon)`
+  &:hover {
+    background-color: #8DC646;
+    border-radius: 7px;
+  }
 `;
+
 const IconGroup = styled.img`
   width: 140px;
   height: 30px;
@@ -78,14 +85,21 @@ const Text = styled.div`
 `;
 
 const MainHeaderContainer = styled.div`
-  flex-direction: row;
-  width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: auto; 
   height: 50px;
+  margin-top: 10px;
+
   @media (max-width: 780px) {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-left: auto;
+    align-items: flex-start; 
+    justify-content: flex-start;
+    margin-right: auto;
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
 `;
 
@@ -98,9 +112,9 @@ const SecondIconGroupContainer = styled.div`
   height: 50px;
   background: #fff;
   border-radius: 10px 10px 10px 10px;
-  margin-top: 20px;
   margin-left: 20px;
   padding: 0 5px;
+  margin-top: 20px;
   
   @media (max-width: 780px) {
     flex-direction: column;
@@ -114,7 +128,7 @@ const SecondIconGroupContainer = styled.div`
 `;
 
 const FirstGreenIcon = styled.div`
-  width: 55px;
+  width: 45px;
   height: 50px;
   transform: rotate(-90deg);
   flex-shrink: 0;
@@ -123,9 +137,6 @@ const FirstGreenIcon = styled.div`
   justify-content: center;
   position: relative;
   border-radius: 10px 10px 0 0;
-  &:hover {
-    background-color: #8DC646;
-  }
 
   @media (max-width: 780px) {
       transform: rotate(0deg);
@@ -157,7 +168,6 @@ const GreenBar = styled.div`
   height: 50px;
   background: #8DC646;
   @media (max-width: 780px) {
-    //transform: rotate(-90deg);
     width: 50px;
     height: 1px;
   }
@@ -167,9 +177,12 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
+  min-width: 45px;
   height: 50px;
-
+  //padding: 10px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  
   &:hover {
     background-color: #8DC646; 
 
@@ -208,13 +221,13 @@ const ThirdIconGroupContainer = styled.div`
   }
 `;
 
-const ThirdIconGroup = () => (
-    <ThirdIconGroupContainer>
-        <IconWrapper>
-            <Icon src={send} alt="Send" />
-        </IconWrapper>
-    </ThirdIconGroupContainer>
-);
+// const ThirdIconGroup = () => (
+//     <ThirdIconGroupContainer>
+//         <IconWrapper>
+//             <Icon src={send} alt="Send" />
+//         </IconWrapper>
+//     </ThirdIconGroupContainer>
+// );
 
 
 
@@ -262,9 +275,9 @@ const MainHeaderIcon = () => {
         <>
             <IconGroupContainer>
                 <IconGroup src={groupIcons} alt="Group Icons" />
-                <Icon src={plusIcon} alt="Plus Icon" />
-                <Icon src={minusIcon} alt="Minus Icon" />
-                <Icon src={cellIcon} alt="Cell Icon" />
+                <FirstGroupIcon src={plusIcon} alt="Plus Icon" />
+                <FirstGroupIcon src={minusIcon} alt="Minus Icon" />
+                <FirstGroupIcon src={cellIcon} alt="Cell Icon" />
                 <DarkGreenIcon>
                     <VerticalBar style={{ left: '5px', top: '14px' }} />
                     <HorizontalBar />
@@ -272,7 +285,7 @@ const MainHeaderIcon = () => {
                     <Text>40мм</Text>
                 </DarkGreenIcon>
 
-                <Icon src={settingIcon} alt="Setting Icon" />
+                <FirstGroupIcon src={settingIcon} alt="Setting Icon" />
             </IconGroupContainer>
             <MainHeaderContainer>
                 <SecondIconGroupContainer>
@@ -301,8 +314,15 @@ const MainHeaderIcon = () => {
                         <Icon src={window} alt="Window" />
                     </IconWrapper>
 
+
                 </SecondIconGroupContainer>
-                <ThirdIconGroup/>
+                <ThirdIconGroupContainer>
+                    <IconWrapper>
+                        <Icon src={send} alt="Send" />
+                    </IconWrapper>
+                </ThirdIconGroupContainer>
+
+                {/*<ThirdIconGroup/>*/}
             </MainHeaderContainer>
 
         </>
