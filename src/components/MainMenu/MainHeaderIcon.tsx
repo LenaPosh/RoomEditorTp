@@ -177,14 +177,14 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 45px;
+  min-width: 50px;
   height: 50px;
-  //padding: 10px;
   border-radius: 10px;
   box-sizing: border-box;
   
   &:hover {
-    background-color: #8DC646; 
+    background-color: #8DC646;
+    min-width: 55px;
 
     & > img {
       filter: brightness(0) invert(1);
