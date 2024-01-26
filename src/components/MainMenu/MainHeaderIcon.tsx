@@ -14,7 +14,7 @@ const IconGroupContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 350px;
+  width: 390px;
   height: 45px;
   box-shadow: 4px 4px 20px 0 rgba(212, 212, 212, 0.50);
   margin-top: 20px;
@@ -31,11 +31,6 @@ const Icon = styled.img`
   width: 30px; 
   height: 30px;
   margin: 0 5px;
-  
-  &:hover {
-    background-color: #8DC646;
-    border-radius: 7px;
-  }
  
 `;
 const IconGroup = styled.img`
