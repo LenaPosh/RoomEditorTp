@@ -14,7 +14,7 @@ const IconGroupContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 390px;
+  width: 410px;
   height: 45px;
   box-shadow: 4px 4px 20px 0 rgba(212, 212, 212, 0.50);
   margin-top: 20px;
