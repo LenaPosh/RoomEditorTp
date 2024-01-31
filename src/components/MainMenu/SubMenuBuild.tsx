@@ -12,6 +12,9 @@ import formThree from '../../img/срезанный угол.png'
 import formFour from '../../img/Выбор фигуры (3).png'
 import formFive from '../../img/Выбор фигуры (4).png'
 import formSix from '../../img/Выбор фигуры (5).png'
+import doorOne from '../../img/двери.png'
+import doorTwo from '../../img/двойные.png'
+import doorThree from '../../img/одинарные.png'
 
 type SubMenuProps = {
     activeItem: string;
@@ -270,23 +273,65 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
             )}
 
 
-
-
-            <SubMenuItem
-                isActive={activeItem === 'awall'}
-            >
+            <SubMenuItem isActive={activeItem === 'awall'}>
                 <StyledIconsSubMenu src={createAwall} alt="Awall" />
-                <SubMenuText>Построить стену</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" />
+                <SubMenuText onClick={() => toggleDropdown('awall')}>Построить стену</SubMenuText>
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('awall')} />
             </SubMenuItem>
+            {openDropdown === 'awall' && (
+                <DropdownMenuContent>
+                    <Input placeholder="Толщина в мм" />
+                </DropdownMenuContent>
+            )}
 
-            <SubMenuItem
-                isActive={activeItem === 'door'}
-            >
+            <SubMenuItem isActive={activeItem === 'door'}>
                 <StyledIconsSubMenu src={installDoor} alt="Door" />
-                <SubMenuText>Установить дверь</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" />
+                <SubMenuText onClick={() => toggleDropdown('door')}>Установить дверь</SubMenuText>
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('door')}/>
             </SubMenuItem>
+            {openDropdown === 'door' && (
+                <DropdownMenuContent>
+                    <Input placeholder="Ширина в мм" />
+                    <Input placeholder="Длина в мм" />
+                    <IconsRow>
+                        <IconContainer>
+                            <Icon src={doorOne} alt="" />
+                            <IconText style={{marginTop: '-10px'}}>Одностворчатая
+                                распашная</IconText>
+                        </IconContainer>
+
+                        <IconContainer>
+                            <Icon src={doorTwo} alt="" />
+                            <IconText style={{marginTop: '-10px'}}>Двухстворчатая
+                                распашная</IconText>
+                        </IconContainer>
+
+                        <IconContainer>
+                            <Icon src={doorThree} alt="" />
+                            <IconText style={{marginTop: '-10px'}}>Одностворчатая
+                                раздвижная</IconText>
+                        </IconContainer>
+                    </IconsRow>
+
+
+                    <IconsRow style={{marginTop: '-20px'}}>
+                        <IconContainer>
+                            <Icon src={formFour} alt="" />
+                            <IconText>Вид</IconText>
+                        </IconContainer>
+                        {/*<BuildForm/>*/}
+                        <IconContainer>
+                            <Icon src={formFive} alt="" />
+                            <IconText>Вид</IconText>
+                        </IconContainer>
+                        <IconContainer>
+                            <Icon src={formSix} alt="" />
+                            <IconText>Вид</IconText>
+                        </IconContainer>
+
+                    </IconsRow>
+                </DropdownMenuContent>
+            )}
 
             <SubMenuItem
                 isActive={activeItem === 'window'}
