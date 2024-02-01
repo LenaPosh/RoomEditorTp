@@ -184,6 +184,7 @@ export const WindowSix = () => {
     )
 }
 
+
 export const FormOne = () => {
     return (
         <div>
@@ -343,25 +344,357 @@ export const FormSix = () => {
 export const DoorOne = () => {
     return (
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="70" viewBox="0 0 113 120" fill="none">
-                <g filter="url(#filter0_d_72_10012)">
-                    <rect x="15" y="16" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <rect x="15.5" y="16.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+            <svg width="80" height="70" viewBox="0 0 130 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_3719)">
+                    <rect x="9" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="9.5" y="0.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
                 </g>
-                <path d="M33 36C33 35.4477 33.4477 35 34 35H64.5C65.0523 35 65.5 35.4477 65.5 36V52.5C65.5 54.1569 66.8431 55.5 68.5 55.5H91C91.5523 55.5 92 55.9477 92 56.5V92.5C92 93.0523 91.5523 93.5 91 93.5H61.5C60.9477 93.5 60.5 93.0523 60.5 92.5V75.5C60.5 73.8431 59.1569 72.5 57.5 72.5H34C33.4477 72.5 33 72.0523 33 71.5V36Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <rect x="42.5" y="16" width="30" height="63" rx="1" stroke="#9F9F9F" strokeWidth="2"/>
+                <rect x="45.5" y="19" width="24" height="60" rx="1" stroke="#9F9F9F" strokeWidth="2"/>
+                <circle cx="49" cy="50.5" r="1.5" fill="#9F9F9F"/>
                 <defs>
-                    <filter id="filter0_d_72_10012" x="0" y="0" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                    <filter id="filter0_d_78_3719" x="-6" y="-16" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
                         <feFlood floodOpacity="0" result="BackgroundImageFix"/>
                         <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
                         <feOffset dx="5" dy="4"/>
                         <feGaussianBlur stdDeviation="10"/>
                         <feComposite in2="hardAlpha" operator="out"/>
                         <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_72_10012"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_72_10012" result="shape"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_3719"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_3719" result="shape"/>
                     </filter>
                 </defs>
             </svg>
+        </div>
+    )
+}
+
+export const DoorTwo = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 137 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_3755)">
+                    <rect x="15.5" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="16" y="0.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <path d="M63.5 16H92.5C93.0523 16 93.5 16.4477 93.5 17V78C93.5 78.5523 93.0523 79 92.5 79H63.5V16Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <path d="M66.5 20C66.5 19.4477 66.9477 19 67.5 19H89.5C90.0523 19 90.5 19.4477 90.5 20V78C90.5 78.5523 90.0523 79 89.5 79H66.5V20Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <circle cx="70" cy="50.5" r="1.5" fill="#9F9F9F"/>
+                <path d="M63.5 16H34.5C33.9477 16 33.5 16.4477 33.5 17V78C33.5 78.5523 33.9477 79 34.5 79H63.5V16Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <path d="M60.5 20C60.5 19.4477 60.0523 19 59.5 19H37.5C36.9477 19 36.5 19.4477 36.5 20V78C36.5 78.5523 36.9477 79 37.5 79H60.5V20Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <circle cx="1.5" cy="1.5" r="1.5" transform="matrix(-1 0 0 1 58.5 49)" fill="#9F9F9F"/>
+                <defs>
+                    <filter id="filter0_d_78_3755" x="0.5" y="-16" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_3755"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_3755" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+
+
+        </div>
+    )
+}
+
+export const DoorThree = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 104 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_3766)">
+                    <rect x="15" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="15.5" y="0.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <rect x="48.5" y="16" width="30" height="63" rx="1" stroke="#9F9F9F" strokeWidth="2"/>
+                <rect x="51.5" y="19" width="24" height="60" rx="1" stroke="#9F9F9F" strokeWidth="2"/>
+                <circle cx="55" cy="50.5" r="1.5" fill="#9F9F9F"/>
+                <rect x="39.5" y="15" width="48" height="2" fill="#9F9F9F"/>
+                <defs>
+                    <filter id="filter0_d_78_3766" x="0" y="-16" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_3766"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_3766" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+
+        </div>
+    )
+}
+
+export const DoorFour = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 130 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_3727)">
+                    <rect x="8.5" y="16" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="9" y="16.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <path d="M55 32H84C84.5523 32 85 32.4477 85 33V94C85 94.5523 84.5523 95 84 95H55V32Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <path d="M58 36C58 35.4477 58.4477 35 59 35H81C81.5523 35 82 35.4477 82 36V94C82 94.5523 81.5523 95 81 95H58V36Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <path d="M55 32H26C25.4477 32 25 32.4477 25 33V94C25 94.5523 25.4477 95 26 95H55V32Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <path d="M52 36C52 35.4477 51.5523 35 51 35H29C28.4477 35 28 35.4477 28 36V94C28 94.5523 28.4477 95 29 95H52V36Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <rect x="15" y="31" width="81" height="2" fill="#9F9F9F"/>
+                <defs>
+                    <filter id="filter0_d_78_3727" x="-6.5" y="0" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_3727"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_3727" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    )
+}
+
+export const DoorFive = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 136 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_3738)">
+                    <rect x="15" y="16" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="15.5" y="16.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <rect x="48.5" y="32" width="30" height="63" rx="1" stroke="#9F9F9F" strokeWidth="2"/>
+                <defs>
+                    <filter id="filter0_d_78_3738" x="0" y="0" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_3738"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_3738" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    )
+}
+
+export const DoorSix = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 107 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_3745)">
+                    <rect x="15.5" y="16" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="16" y="16.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <path d="M63.5 35H92.5C93.0523 35 93.5 35.4477 93.5 36V97C93.5 97.5523 93.0523 98 92.5 98H63.5V35Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <path d="M63.5 35H34.5C33.9477 35 33.5 35.4477 33.5 36V97C33.5 97.5523 33.9477 98 34.5 98H63.5V35Z" stroke="#9F9F9F" strokeWidth="2"/>
+                <defs>
+                    <filter id="filter0_d_78_3745" x="0.5" y="0" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_3745"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_3745" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    )
+}
+
+export const StructureOne = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 121 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_4499)">
+                    <rect width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="0.5" y="0.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <rect x="33.5" y="16" width="30" height="63" rx="1" stroke="#9F9F9F" strokeWidth="2"/>
+                <rect x="34" y="22" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34" y="29" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34" y="36" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34" y="43" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34" y="50" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34" y="57" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34" y="64" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34" y="71" width="29" height="2" fill="#9F9F9F"/>
+                <defs>
+                    <filter id="filter0_d_78_4499" x="-15" y="-16" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_4499"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_4499" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    )
+}
+
+export const StructureTwo = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 136 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_4535)">
+                    <rect x="15" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="15.5" y="0.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <rect x="34" y="16" width="30" height="63" rx="1" stroke="#9F9F9F" strokeWidth="2"/>
+                <rect x="34.5" y="22" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34.5" y="29" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34.5" y="36" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34.5" y="43" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="34.5" y="50" width="29" height="2" fill="#9F9F9F"/>
+                <rect x="69.5" y="79" width="29" height="2" transform="rotate(-90 69.5 79)" fill="#9F9F9F"/>
+                <rect x="76.5" y="79" width="29" height="2" transform="rotate(-90 76.5 79)" fill="#9F9F9F"/>
+                <rect x="83.5" y="79" width="29" height="2" transform="rotate(-90 83.5 79)" fill="#9F9F9F"/>
+                <mask id="path-12-inside-1_78_4535" fill="white">
+                    <path d="M33.5 52C33.5 50.8954 34.3954 50 35.5 50H90.5C91.6046 50 92.5 50.8954 92.5 52V78C92.5 79.1046 91.6046 80 90.5 80H35.5C34.3954 80 33.5 79.1046 33.5 78V52Z"/>
+                </mask>
+                <path d="M32.5 51C32.5 49.3431 33.8431 48 35.5 48H90.5C92.7091 48 94.5 49.7909 94.5 52H90.5H35.5C34.9477 52 34.5 52 34.5 52L32.5 51ZM94.5 78C94.5 80.2091 92.7091 82 90.5 82H35.5C33.8431 82 32.5 80.6569 32.5 79L34.5 78C34.5 78 34.9477 78 35.5 78H90.5H94.5ZM35.5 82C33.8431 82 32.5 80.6569 32.5 79V51C32.5 49.3431 33.8431 48 35.5 48V52C34.9477 52 34.5 52 34.5 52V78C34.5 78 34.9477 78 35.5 78V82ZM90.5 48C92.7091 48 94.5 49.7909 94.5 52V78C94.5 80.2091 92.7091 82 90.5 82V78V52V48Z" fill="#9F9F9F" mask="url(#path-12-inside-1_78_4535)"/>
+                <defs>
+                    <filter id="filter0_d_78_4535" x="0" y="-16" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_4535"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_4535" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+
+        </div>
+    )
+}
+
+export const StructureThree = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 113 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_4550)">
+                    <rect x="15" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="15.5" y="0.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <circle cx="63" cy="48" r="29" stroke="#9F9F9F" strokeWidth="2"/>
+                <line x1="63" y1="19" x2="63" y2="77" stroke="#9F9F9F" strokeWidth="2"/>
+                <line x1="33" y1="47" x2="91" y2="47" stroke="#9F9F9F" strokeWidth="2"/>
+                <line x1="84.7988" y1="68.213" x2="43.7866" y2="27.2008" stroke="#9F9F9F" strokeWidth="2"/>
+                <line x1="63" y1="19" x2="63" y2="77" stroke="#9F9F9F" strokeWidth="2"/>
+                <line x1="41.787" y1="67.7988" x2="82.7992" y2="26.7866" stroke="#9F9F9F" strokeWidth="2"/>
+                <defs>
+                    <filter id="filter0_d_78_4550" x="0" y="-16" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_4550"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_4550" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+        </div>
+    )
+}
+
+export const StructureFour = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 121 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_4513)">
+                    <rect y="16" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="0.5" y="16.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <defs>
+                    <filter id="filter0_d_78_4513" x="-15" y="0" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_4513"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_4513" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+
+        </div>
+    )
+}
+
+export const StructureFive = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 136 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_4519)">
+                    <rect x="15" y="16" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="15.5" y="16.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <rect x="58" y="32" width="11" height="29" rx="1" stroke="#303030" strokeWidth="2"/>
+                <defs>
+                    <filter id="filter0_d_78_4519" x="0" y="0" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_4519"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_4519" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+
+        </div>
+    )
+}
+
+export const StructureSix = () => {
+    return (
+        <div>
+            <svg width="80" height="70" viewBox="0 0 113 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g filter="url(#filter0_d_78_4527)">
+                    <rect x="15" y="16" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
+                    <rect x="15.5" y="16.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
+                </g>
+                <rect x="55" y="29" width="18" height="27" rx="1" stroke="#9F9F9F" strokeWidth="2"/>
+                <defs>
+                    <filter id="filter0_d_78_4527" x="0" y="0" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
+                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+                        <feOffset dx="5" dy="4"/>
+                        <feGaussianBlur stdDeviation="10"/>
+                        <feComposite in2="hardAlpha" operator="out"/>
+                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
+                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_78_4527"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_78_4527" result="shape"/>
+                    </filter>
+                </defs>
+            </svg>
+
         </div>
     )
 }
