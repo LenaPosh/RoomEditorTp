@@ -6,15 +6,25 @@ import arrowIcon from "../../img/Arrow 1.png"
 import installDoor from '../../img/InstallTheDoor.png'
 import installWindow from '../../img/installTheWindow.png'
 import structure from '../../img/installTheStructure.png'
-import formOne from '../../img/прямоугольная.png'
-import formTwo from '../../img/г-образная.png'
-import formThree from '../../img/срезанный угол.png'
 import formFour from '../../img/Выбор фигуры (3).png'
 import formFive from '../../img/Выбор фигуры (4).png'
 import formSix from '../../img/Выбор фигуры (5).png'
 import doorOne from '../../img/двери.png'
 import doorTwo from '../../img/двойные.png'
 import doorThree from '../../img/одинарные.png'
+import {
+    FormFive,
+    FormFour,
+    FormOne, FormSix,
+    FormThree,
+    FormTwo,
+    WindowFive,
+    WindowFour,
+    WindowOne,
+    WindowSix,
+    WindowThree,
+    WindowTwo
+} from "../Icon";
 
 type SubMenuProps = {
     activeItem: string;
@@ -132,10 +142,6 @@ const Input = styled.input`
 const Icon = styled.img`
   width: 80px;
   height: 70px;
-  //margin-right: 10px;
-  //&:hover {
-  //  background-color: #8DC646;
-  //}
   
 `;
 
@@ -156,57 +162,28 @@ const DropdownMenuContent = styled.div`
   }
 `;
 
-const IconWithColor = styled.img`
-  background-color: rgba(141, 198, 70, 0.2);
-  width: 80px;
-  height: 80px;
-  //margin-right: 10px;
-`;
 
 const IconContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80px;
-  height: 90px;
   cursor: pointer;
-  padding: 0;
+  box-sizing: border-box;
 `;
+
+
 
 const IconText = styled.div`
   font-size: 10px;
-  //margin-top: -10px;
-  margin-top: 3px;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
 
 
-
-const BuildForm = () => {
-    return (
-        <div>
-            <svg xmlns="http://www.w3.org/2000/svg" width="121" height="56" viewBox="0 0 121 56" fill="none">
-                <g filter="url(#filter0_d_72_10002)">
-                    <rect y="16" width="96" height="96" rx="6" fill="#8DC646" fillOpacity="0.2" shapeRendering="crispEdges"/>
-                    <rect x="0.5" y="16.5" width="95" height="95" rx="5.5" stroke="#C9C9C9" shapeRendering="crispEdges"/>
-                </g>
-                <path d="M17 57C17 56.4477 17.4477 56 18 56H30.5C32.1569 56 33.5 54.6569 33.5 53V33C33.5 32.4477 33.9477 32 34.5 32H62.5C63.0523 32 63.5 32.4477 63.5 33V53C63.5 54.6569 64.8431 56 66.5 56H79C79.5523 56 80 56.4477 80 57V94C80 94.5523 79.5523 95 79 95H18C17.4477 95 17 94.5523 17 94V57Z" stroke="#9F9F9F" strokeWidth="2"/>
-                <defs>
-                    <filter id="filter0_d_72_10002" x="-15" y="0" width="136" height="136" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                        <feFlood floodOpacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dx="5" dy="4"/>
-                        <feGaussianBlur stdDeviation="10"/>
-                        <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0 0.831373 0 0 0 0.2 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_72_10002"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_72_10002" result="shape"/>
-                    </filter>
-                </defs>
-            </svg>
-        </div>
-        )
-}
 
 export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -237,35 +214,34 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                         <Input placeholder="Длина в мм" />
                         <IconsRow>
                             <IconContainer>
-                                <Icon src={formOne} alt="Прямоугольная" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>Прямоугольная</IconText>
+                                <FormOne />
+                                <IconText style={{marginTop: '-15px', marginLeft: '-11px'}}>Прямоугольная</IconText>
                             </IconContainer>
 
                             <IconContainer>
-                                <Icon src={formTwo} alt="Г-образная" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>Г-образная</IconText>
+                                <FormTwo/>
+                                <IconText style={{marginTop: '-15px', marginLeft: '-8px'}}>Г-образная</IconText>
                             </IconContainer>
 
                             <IconContainer>
-                                <Icon src={formThree} alt="Срезанный угол" />
-                                <IconText style={{marginTop: '-10px'}}>Срезанный угол</IconText>
+                                <FormThree />
+                                <IconText style={{marginTop: '-15px'}}>Срезанный угол</IconText>
                             </IconContainer>
                         </IconsRow>
 
 
-                        <IconsRow style={{marginTop: '-20px'}}>
+                        <IconsRow>
                             <IconContainer>
-                                <Icon src={formFour} alt="" />
-                                <IconText>Вид</IconText>
-                            </IconContainer>
-                            {/*<BuildForm/>*/}
-                            <IconContainer>
-                                <Icon src={formFive} alt="" />
-                                <IconText>Вид</IconText>
+                                <FormFour/>
+                                <IconText style={{marginTop: '-5px', marginLeft: '-15px'}}>Ступенчатая</IconText>
                             </IconContainer>
                             <IconContainer>
-                                <Icon src={formSix} alt="" />
-                                <IconText>Вид</IconText>
+                                <FormFive />
+                                <IconText style={{marginTop: '-5px', marginLeft: '-8px'}}>Полукруг</IconText>
+                            </IconContainer>
+                            <IconContainer>
+                                <FormSix />
+                                <IconText style={{marginTop: '-5px'}}>Зигзагообразная</IconText>
                             </IconContainer>
 
                         </IconsRow>
@@ -319,7 +295,6 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                             <Icon src={formFour} alt="" />
                             <IconText>Вид</IconText>
                         </IconContainer>
-                        {/*<BuildForm/>*/}
                         <IconContainer>
                             <Icon src={formFive} alt="" />
                             <IconText>Вид</IconText>
@@ -337,9 +312,51 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 isActive={activeItem === 'window'}
             >
                 <StyledIconsSubMenu src={installWindow} alt="Window" />
-                <SubMenuText>Установить окно</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" />
+                <SubMenuText onClick={() => toggleDropdown('window')}>Установить окно</SubMenuText>
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('window')} />
             </SubMenuItem>
+            {openDropdown === 'window' && (
+                <DropdownMenuContent>
+                    <Input placeholder="Ширина в мм" />
+                    <Input placeholder="Длина в мм" />
+                    <Input placeholder="Высота от пола в мм" />
+                    <IconsRow>
+                        <IconContainer>
+                            <WindowOne/>
+                            <IconText style={{marginTop: '-10px'}}>Одностворчатое
+                                распашное</IconText>
+                        </IconContainer>
+
+                        <IconContainer>
+                            <WindowTwo/>
+                            <IconText style={{marginTop: '-10px'}}>Двухстворчатое
+                                распашное</IconText>
+                        </IconContainer>
+
+                        <IconContainer>
+                            <WindowThree/>
+                            <IconText style={{marginTop: '-10px'}}>Трехстворчатое
+                                распашное</IconText>
+                        </IconContainer>
+                    </IconsRow>
+
+                    <IconsRow style={{marginTop: '-20px'}}>
+                        <IconContainer>
+                            <WindowFour/>
+                            <IconText>Вид</IconText>
+                        </IconContainer>
+                        <IconContainer>
+                            <WindowFive/>
+                            <IconText>Вид</IconText>
+                        </IconContainer>
+                        <IconContainer>
+                            <WindowSix/>
+                            <IconText>Вид</IconText>
+                        </IconContainer>
+
+                    </IconsRow>
+                </DropdownMenuContent>
+            )}
 
             <SubMenuItem
                 isActive={activeItem === 'structure'}
