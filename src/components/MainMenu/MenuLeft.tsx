@@ -5,6 +5,7 @@ import finishIcon from '../../img/Finishing.png';
 import furnitureIcon from '../../img/Furniture.png';
 import settingIcon from '../../img/Settings.png';
 
+
 type MenuLeftProps = {
     onItemSelect: (itemName: string) => void;
 };
@@ -61,17 +62,18 @@ const MenuLeftContainer = styled.div`
 }
 `;
 
-const MenuItem = styled.div<{ isActive: boolean }>`
+const MenuItem = styled.div<{ $isActive: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 10px;
   cursor: pointer;
+  background-color: ${({ $isActive }) => ($isActive ? '#e8e8e8' : 'transparent')};
+  border-radius: ${({ $isActive }) => ($isActive ? '20px' : 'none')};
 
   &:hover {
     background-color: #e8e8e8;
-    border-radius: 20px;
   }
 
   @media (max-width: 768px) {
@@ -105,35 +107,36 @@ export const MenuLeft: React.FC<MenuLeftProps> = ({ onItemSelect }) => {
     const [activeItem, setActiveItem] = useState<string | null>(null);
 
     const handleMenuItemClick = (itemName: string) => {
+        console.log('MenuLeft item clicked:', itemName);
         setActiveItem(itemName);
         onItemSelect(itemName);
     };
     return (
         <MenuLeftContainer>
             <MenuItem
-                onClick={() => handleMenuItemClick('item1')}
-                isActive={activeItem === 'item1'}
+                onClick={() => handleMenuItemClick('build')}
+                $isActive={activeItem === 'build'}
             >
                 <StyledIcons src={buildIcon} alt="Build" />
                 <MenuText>Стройка</MenuText>
             </MenuItem>
             <MenuItem
-                onClick={() => handleMenuItemClick('item2')}
-                isActive={activeItem === 'item2'}
+                onClick={() => handleMenuItemClick('finishing')}
+                $isActive={activeItem === 'finishing'}
             >
-                <StyledIcons src={finishIcon} alt="" />
+                <StyledIcons src={finishIcon} alt="finishing" />
                 <MenuText>Отделка</MenuText>
             </MenuItem>
             <MenuItem
-                onClick={() => handleMenuItemClick('item3')}
-                isActive={activeItem === 'item3'}
+                onClick={() => handleMenuItemClick('furniture')}
+                $isActive={activeItem === 'furniture'}
             >
                 <StyledIcons src={furnitureIcon} alt="" />
                 <MenuText>Мебель</MenuText>
             </MenuItem>
             <MenuItem
-                onClick={() => handleMenuItemClick('item4')}
-                isActive={activeItem === 'item4'}
+                onClick={() => handleMenuItemClick('setting')}
+                $isActive={activeItem === 'setting'}
             >
                 <StyledIcons src={settingIcon} alt="" />
                 <MenuText>Настройки</MenuText>

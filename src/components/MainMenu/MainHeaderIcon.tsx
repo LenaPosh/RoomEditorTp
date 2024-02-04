@@ -233,14 +233,6 @@ const ThirdIconGroupContainer = styled.div`
   }
 `;
 
-// const ThirdIconGroup = () => (
-//     <ThirdIconGroupContainer>
-//         <IconWrapper>
-//             <Icon src={send} alt="Send" />
-//         </IconWrapper>
-//     </ThirdIconGroupContainer>
-// );
-
 
 
 const IconThree = () => (
@@ -334,7 +326,6 @@ const MainHeaderIcon = () => {
                     </IconWrapper>
                 </ThirdIconGroupContainer>
 
-                {/*<ThirdIconGroup/>*/}
             </MainHeaderContainer>
 
         </>

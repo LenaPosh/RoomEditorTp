@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import createRoomIcon from "../../img/createAroom.png";
 import createAwall from '../../img/createAwall.png'
@@ -23,17 +23,17 @@ import {
     WindowTwo
 } from "../Icon";
 
-type SubMenuProps = {
+export type SubMenuProps = {
     activeItem: string;
     onClose: () => void;
 };
 
-interface DropdownMenuContentProps {
-    isOpen: boolean;
+export interface DropdownMenuContentProps {
+    $isOpen: boolean;
 }
 
 
-const SubMenuContainer = styled.div`
+export const SubMenuContainer = styled.div`
   width: 272px;
   height: auto;
   flex-shrink: 0;
@@ -57,27 +57,31 @@ const SubMenuContainer = styled.div`
   }
 `;
 
-const SubMenuItem = styled.div<{ isActive: boolean }>`
+export const SubMenuItem = styled.div<{ $isActive: boolean }>`
   display: flex;
   position: relative;
   align-items: center;
   justify-content: flex-start;
-  gap: 1px;
+  gap: 5px;
   padding: 5px;
-  &:hover {
+  background-color: transparent;
+  border-radius: 20px;
+
+  &:hover, &:active {
     background-color: #e8e8e8;
-    border-radius: 20px;
   }
-  
 `;
-const SubMenuHeader = styled.div`
+
+
+
+export const SubMenuHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: -10px;
 `;
 
-const SubMenuTitle = styled.h3`
+export const SubMenuTitle = styled.h3`
   color: #000;
   font-family: "Nunito Sans", sans-serif;
   font-size: 18px;
@@ -86,7 +90,7 @@ const SubMenuTitle = styled.h3`
   line-height: normal;
   margin-left: 10px;
 `;
-const SubMenuText = styled.span`
+export const SubMenuText = styled.span`
   color: #000;
   text-align: center;
   font-family: "Nunito Sans", sans-serif;
@@ -96,7 +100,7 @@ const SubMenuText = styled.span`
   padding: 0 5px;
 `;
 
-const CloseButton = styled.button`
+export const CloseButton = styled.button`
   border: none;
   background: none;
   cursor: pointer;
@@ -115,14 +119,14 @@ const StyledIconsSubMenu = styled.img`
   height: 30px;
   `;
 
-const StyledArrowIcon = styled.img`
+export const StyledArrowIcon = styled.img`
   width: 15px;
   height: 9px;
   margin-left: auto;
   `;
 
 
-const Input = styled.input`
+export const Input = styled.input`
   width: 210px;
   padding: 10px;
   margin-bottom: 10px;
@@ -138,17 +142,20 @@ const Input = styled.input`
   &:focus::placeholder {
     color: #727070;
   }
-`;
 
+  @media (max-width: 768px) {
+    width: 90%;
+
+  }
+`;
 
 const IconsRow = styled.div`
   display: flex;
   justify-content: space-between;
-  //margin-bottom: 10px;
 `;
 
-const DropdownMenuContent = styled.div<DropdownMenuContentProps>`
-  display: ${props => props.isOpen ? 'block' : 'none'};
+export const DropdownMenuContent = styled.div<DropdownMenuContentProps>`
+  display: ${({ $isOpen }) => ($isOpen ? 'block' : 'none')};
   max-height: 200px;
   overflow-y: auto;
   padding: 10px;
@@ -171,7 +178,7 @@ const IconContainer = styled.div`
 
 
 
-const IconText = styled.div`
+export const IconText = styled.div`
   font-size: 10px;
   text-align: center;
   width: 100%;
@@ -180,7 +187,7 @@ const IconText = styled.div`
   text-overflow: ellipsis;
 `;
 
-const StyledIconContainer = styled(IconContainer)`
+export const StyledIconContainer = styled(IconContainer)`
   &:hover {
     svg {
       fill: #8DC646;
@@ -201,8 +208,6 @@ const StyledIconContainer = styled(IconContainer)`
   }
   
 `;
-
-
 
 
 export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) => {
@@ -231,6 +236,10 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
         }
         return '320px';
     };
+
+    useEffect(() => {
+        console.log('Текущий активный элемент:', activeItem);
+    }, [activeItem]);
     return (
         <SubMenuContainer style={{ height: calculateContentHeight() }}>
             <SubMenuHeader>
@@ -238,13 +247,13 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 <CloseButton onClick={onClose}>Закрыть</CloseButton>
             </SubMenuHeader>
 
-            <SubMenuItem                isActive={activeItem === 'build'}>
+            <SubMenuItem                $isActive={activeItem === 'build'}>
                 <StyledIconsSubMenu src={createRoomIcon} alt="Build" />
                 <SubMenuText onClick={() => toggleDropdown('build')}>Построить комнату</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('build')} />
             </SubMenuItem>
             {openDropdown === 'build' && (
-                <DropdownMenuContent isOpen={openDropdown === 'build'}>
+                <DropdownMenuContent $isOpen={openDropdown === 'build'}>
                         <Input placeholder="Ширина в мм" />
                         <Input placeholder="Длина в мм" />
                         <IconsRow>
@@ -284,24 +293,24 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
             )}
 
 
-            <SubMenuItem isActive={activeItem === 'awall'}>
+            <SubMenuItem $isActive={activeItem === 'awall'}>
                 <StyledIconsSubMenu src={createAwall} alt="Awall" />
                 <SubMenuText onClick={() => toggleDropdown('awall')}>Построить стену</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('awall')} />
             </SubMenuItem>
             {openDropdown === 'awall' && (
-                <DropdownMenuContent isOpen={openDropdown === 'awall'}>
+                <DropdownMenuContent $isOpen={openDropdown === 'awall'}>
                     <Input placeholder="Толщина в мм" />
                 </DropdownMenuContent>
             )}
 
-            <SubMenuItem isActive={activeItem === 'door'}>
+            <SubMenuItem $isActive={activeItem === 'door'}>
                 <StyledIconsSubMenu src={installDoor} alt="Door" />
                 <SubMenuText onClick={() => toggleDropdown('door')}>Установить дверь</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('door')}/>
             </SubMenuItem>
             {openDropdown === 'door' && (
-                <DropdownMenuContent isOpen={openDropdown === 'door'}>
+                <DropdownMenuContent $isOpen={openDropdown === 'door'}>
                     <Input placeholder="Ширина в мм" />
                     <Input placeholder="Длина в мм" />
                     <IconsRow>
@@ -345,14 +354,14 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
             )}
 
             <SubMenuItem
-                isActive={activeItem === 'window'}
+                $isActive={activeItem === 'window'}
             >
                 <StyledIconsSubMenu src={installWindow} alt="Window" />
                 <SubMenuText onClick={() => toggleDropdown('window')}>Установить окно</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('window')} />
             </SubMenuItem>
             {openDropdown === 'window' && (
-                <DropdownMenuContent isOpen={openDropdown === 'window'}>
+                <DropdownMenuContent $isOpen={openDropdown === 'window'}>
                     <Input placeholder="Ширина в мм" />
                     <Input placeholder="Длина в мм" />
                     <Input placeholder="Высота от пола в мм" />
@@ -396,7 +405,7 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
 
 
             <SubMenuItem
-                isActive={activeItem === 'structure'}
+                $isActive={activeItem === 'structure'}
             >
                 <StyledIconsSubMenu src={structure} alt="Structure" />
                 <SubMenuText onClick={() => toggleDropdown('structure')}>Установить конструкцию</SubMenuText>
@@ -404,7 +413,7 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
             </SubMenuItem>
 
             {openDropdown === 'structure' && (
-                <DropdownMenuContent isOpen={openDropdown === 'structure'}>
+                <DropdownMenuContent $isOpen={openDropdown === 'structure'}>
                     <Input placeholder="Длина в мм" />
                     <Input placeholder="Ширина в мм" />
                     <Input placeholder="Высота в мм" />

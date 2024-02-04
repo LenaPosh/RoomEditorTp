@@ -4,6 +4,7 @@ import {GlobalStyle} from '../form/FormStyles';
 import {MenuLeft} from './MenuLeft'
 import SubMenuBuild from "./SubMenuBuild";
 import MainHeaderIcon from "./MainHeaderIcon";
+import SubMenuFurniture from "./SubMenuFurniture";
 
 
 
@@ -20,7 +21,7 @@ const PageContainer = styled.div`
 `;
 
 interface OverlayProps {
-    isOpen: boolean;
+    $isOpen: boolean;
 }
 export const Overlay = styled.div<OverlayProps>`
   display: none; 
@@ -33,7 +34,7 @@ export const Overlay = styled.div<OverlayProps>`
   z-index: 5;
 
   @media (max-width: 780px) {
-    display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
+    display: ${({ $isOpen }) => ($isOpen ? 'block' : 'none')};
   }
 `;
 
@@ -54,10 +55,12 @@ export const MainMenu: React.FC = () => {
     return (
         <>
             <GlobalStyle />
-            {isSubMenuOpen && <Overlay isOpen={isSubMenuOpen} onClick={() => setSubMenuOpen(false)} />}
+            {isSubMenuOpen && <Overlay $isOpen={isSubMenuOpen} onClick={handleCloseSubMenu} />}
             <PageContainer>
                 <MenuLeft onItemSelect={handleMenuClick} />
-                {activeMenuItem && <SubMenuBuild activeItem={activeMenuItem} onClose={handleCloseSubMenu} />}
+                {activeMenuItem === 'build' && <SubMenuBuild activeItem={activeMenuItem} onClose={handleCloseSubMenu} />}
+                {activeMenuItem === 'furniture' && <SubMenuFurniture activeItem={activeMenuItem} onClose={handleCloseSubMenu} />}
+
                 <MainHeaderIcon />
 
             </PageContainer>
