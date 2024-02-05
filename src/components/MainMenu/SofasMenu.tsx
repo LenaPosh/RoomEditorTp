@@ -38,33 +38,33 @@ const RangeSlider = styled.input`
   background: #4CAF50  !important;
   border-radius: 10px;
    
-  //&::-webkit-slider-thumb {
-  //  -webkit-appearance: none;
-  //  appearance: none;
-  //  width: 25px;
-  //  height: 10px; 
-  //  background: #4CAF50;
-  //  border-radius: 10px;
-  //}
-  //
-  //&::-webkit-slider-runnable-track {
-  //  height: 10px;
-  //  background: #ddd;
-  //  border-radius: 10px;
-  //}
-  //
-  //&::-moz-range-thumb {
-  //  width: 25px;
-  //  height: 10px;
-  //  background: #4CAF50;
-  //  border-radius: 10px;
-  //}
-  //
-  //&::-moz-range-track {
-  //  height: 8px;
-  //  background: #ddd;
-  //  border-radius: 10px;
-  //}
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 10px; 
+    background: #4CAF50 !important;
+    border-radius: 10px;
+  }
+
+  &::-webkit-slider-runnable-track {
+    height: 10px;
+    background: #ddd;
+    border-radius: 10px;
+  }
+
+  &::-moz-range-thumb {
+    width: 25px;
+    height: 10px;
+    background: #4CAF50 !important;
+    border-radius: 10px;
+  }
+
+  &::-moz-range-track {
+    height: 8px;
+    background: #ddd;
+    border-radius: 10px;
+  }
 `;
 
 

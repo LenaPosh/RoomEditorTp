@@ -37,10 +37,11 @@ const SubMenuItem = styled.div<{ $isActive: boolean }>`
   gap: 10px;
   padding: 10px;
   background-color: ${({ $isActive }) => $isActive ? '#e8e8e8' : 'transparent'};
-  border-radius: ${({ $isActive }) => $isActive ? '20px' : 'none'};
+  border-radius: 20px;
 
   &:hover {
     background-color: #e8e8e8;
+    border-radius: 20px;
   }
 `;
 

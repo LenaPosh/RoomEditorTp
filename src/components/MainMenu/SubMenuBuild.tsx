@@ -72,8 +72,6 @@ export const SubMenuItem = styled.div<{ $isActive: boolean }>`
   }
 `;
 
-
-
 export const SubMenuHeader = styled.div`
   display: flex;
   justify-content: space-between;
@@ -136,7 +134,6 @@ export const Input = styled.input`
   ::placeholder {
     color: #a9a9a9;
     font-size: 6px !important;;
-    //font-style: italic;
   }
 
   &:focus::placeholder {
@@ -183,7 +180,6 @@ export const IconText = styled.div`
   text-align: center;
   width: 100%;
   overflow: hidden;
-  //white-space: nowrap;
   text-overflow: ellipsis;
 `;
 
@@ -192,21 +188,24 @@ export const StyledIconContainer = styled(IconContainer)`
     svg {
       fill: #8DC646;
     }
-    //& svg rect {
-    //  stroke: black;
-    //}
-    //rect:nth-child(2) {
-    //  stroke: black; 
-    //}
-    rect:nth-of-type(1), rect:nth-of-type(2), rect:nth-of-type(3), rect:nth-of-type(4), rect:nth-of-type(5), rect:nth-of-type(6), rect:nth-of-type(7), rect:nth-of-type(8), rect:nth-of-type(9), rect:nth-of-type(10), rect:nth-of-type(11) {
+
+    & svg {
       stroke: black;
+    }
+
+    nth-child(2) {
+    stroke: black;
+  }
+
+    rect:nth-of-type(1), rect:nth-of-type(2), rect:nth-of-type(3), rect:nth-of-type(4), rect:nth-of-type(5), rect:nth-of-type(6), rect:nth-of-type(7), rect:nth-of-type(8), rect:nth-of-type(9), rect:nth-of-type(10), rect:nth-of-type(11) {
+      stroke: #1f1f1f;
     }
 
     path, circle, line {
       stroke: black;
     }
   }
-  
+
 `;
 
 
