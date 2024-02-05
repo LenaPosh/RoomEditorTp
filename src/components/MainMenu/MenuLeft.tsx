@@ -4,6 +4,7 @@ import buildIcon from '../../img/Building.png';
 import finishIcon from '../../img/Finishing.png';
 import furnitureIcon from '../../img/Furniture.png';
 import settingIcon from '../../img/Settings.png';
+import {buildText, finishingText, furnitureText, settingText} from "../../textVariables";
 
 
 type MenuLeftProps = {
@@ -118,28 +119,28 @@ export const MenuLeft: React.FC<MenuLeftProps> = ({ onItemSelect }) => {
                 $isActive={activeItem === 'build'}
             >
                 <StyledIcons src={buildIcon} alt="Build" />
-                <MenuText>Стройка</MenuText>
+                <MenuText>{buildText}</MenuText>
             </MenuItem>
             <MenuItem
                 onClick={() => handleMenuItemClick('finishing')}
                 $isActive={activeItem === 'finishing'}
             >
                 <StyledIcons src={finishIcon} alt="finishing" />
-                <MenuText>Отделка</MenuText>
+                <MenuText>{finishingText}</MenuText>
             </MenuItem>
             <MenuItem
                 onClick={() => handleMenuItemClick('furniture')}
                 $isActive={activeItem === 'furniture'}
             >
                 <StyledIcons src={furnitureIcon} alt="" />
-                <MenuText>Мебель</MenuText>
+                <MenuText>{furnitureText}</MenuText>
             </MenuItem>
             <MenuItem
                 onClick={() => handleMenuItemClick('setting')}
                 $isActive={activeItem === 'setting'}
             >
                 <StyledIcons src={settingIcon} alt="" />
-                <MenuText>Настройки</MenuText>
+                <MenuText>{settingText}</MenuText>
             </MenuItem>
 
         </MenuLeftContainer>
