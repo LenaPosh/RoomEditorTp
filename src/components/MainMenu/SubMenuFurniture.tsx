@@ -196,60 +196,12 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                     <SubMenuText onClick={() => toggleDropdown('kitchen')}>{t('kitchenText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kitchen')} />
                 </SubMenuItem>
-                {/*{openDropdown === 'kitchen' && (*/}
-                {/*    <DropdownMenuContent isOpen={openDropdown === 'kitchen'}>*/}
-                {/*        <Input placeholder="Толщина в мм" />*/}
-                {/*    </DropdownMenuContent>*/}
-                {/*)}*/}
 
                 <SubMenuItem $isActive={activeItem === 'kitchenTwo'}>
                     <StyledIconsSubMenu src={kitchenRoomTwo} alt='' />
                     <SubMenuText onClick={() => toggleDropdown('kitchenTwo')}>{t('kitchenTwoText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kitchenTwo')}/>
                 </SubMenuItem>
-                {/*{openDropdown === 'kitchenTwo' && (*/}
-                {/*    <DropdownMenuContent isOpen={openDropdown === 'kitchenTwo'}>*/}
-                {/*        <Input placeholder="Ширина в мм" />*/}
-                {/*        <Input placeholder="Длина в мм" />*/}
-                {/*        <IconsRow>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <DoorOne/>*/}
-                {/*                <IconText style={{marginTop: '-10px'}}>Одностворчатая*/}
-                {/*                    распашная</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*            <StyledIconContainer>*/}
-                {/*                <DoorTwo/>*/}
-                {/*                <IconText style={{marginTop: '-10px'}}>Двухстворчатая*/}
-                {/*                    распашная</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*            <StyledIconContainer>*/}
-                {/*                <DoorThree/>*/}
-                {/*                <IconText style={{marginTop: '-10px'}}>Одностворчатая*/}
-                {/*                    раздвижная</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*        </IconsRow>*/}
-
-
-                {/*        <IconsRow>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <DoorFour />*/}
-                {/*                <IconText>Двухстворчатая*/}
-                {/*                    раздвижная</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <DoorFive />*/}
-                {/*                <IconText>Одностворчатая встраиваемая</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <DoorSix/>*/}
-                {/*                <IconText>Двухстворчатая встраиваемая</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*        </IconsRow>*/}
-                {/*    </DropdownMenuContent>*/}
-                {/*)}*/}
 
                 <SubMenuItem
                     $isActive={activeItem === 'bedroom'}
@@ -258,48 +210,6 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                     <SubMenuText onClick={() => toggleDropdown('bedroom')}>{t('bedroomText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('bedroom')} />
                 </SubMenuItem>
-                {/*{openDropdown === 'bedroom' && (*/}
-                {/*    <DropdownMenuContent isOpen={openDropdown === 'bedroom'}>*/}
-                {/*        <Input placeholder="Ширина в мм" />*/}
-                {/*        <Input placeholder="Длина в мм" />*/}
-                {/*        <Input placeholder="Высота от пола в мм" />*/}
-                {/*        <IconsRow>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <WindowOne/>*/}
-                {/*                <IconText style={{marginTop: '-10px'}}>Одностворчатое*/}
-                {/*                    распашное</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*            <StyledIconContainer>*/}
-                {/*                <WindowTwo/>*/}
-                {/*                <IconText style={{marginTop: '-10px'}}>Двухстворчатое*/}
-                {/*                    распашное</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*            <StyledIconContainer>*/}
-                {/*                <WindowThree/>*/}
-                {/*                <IconText style={{marginTop: '-10px'}}>Трехстворчатое*/}
-                {/*                    распашное</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*        </IconsRow>*/}
-
-                {/*        <IconsRow>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <WindowFour/>*/}
-                {/*                <IconText>Одностворчатое глухое</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <WindowFive/>*/}
-                {/*                <IconText>Одностворчатое раздвижное</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <WindowSix/>*/}
-                {/*                <IconText>Двухстворчатое раздвижное</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*        </IconsRow>*/}
-                {/*    </DropdownMenuContent>*/}
-                {/*)}*/}
 
 
                 <SubMenuItem
@@ -310,45 +220,6 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kids')} />
                 </SubMenuItem>
 
-                {/*{openDropdown === 'kids' && (*/}
-                {/*    <DropdownMenuContent isOpen={openDropdown === 'kids'}>*/}
-                {/*        <Input placeholder="Длина в мм" />*/}
-                {/*        <Input placeholder="Ширина в мм" />*/}
-                {/*        <Input placeholder="Высота в мм" />*/}
-                {/*        <IconsRow>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <StructureOne/>*/}
-                {/*                <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>Лестница <br/> прямая</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*            <StyledIconContainer>*/}
-                {/*                <StructureTwo/>*/}
-                {/*                <IconText style={{marginTop: '-10px',  marginLeft: '-9px'}}>Лестница поворотная</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*            <StyledIconContainer>*/}
-                {/*                <StructureThree/>*/}
-                {/*                <IconText style={{marginTop: '-10px'}}>Лестница винтовая</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*        </IconsRow>*/}
-
-                {/*        <IconsRow>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <StructureFour/>*/}
-                {/*                <IconText style={{ marginLeft: '-11px'}}>Лестничное ограждение</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <StructureFive/>*/}
-                {/*                <IconText style={{marginBottom: '10px', marginLeft: '-11px'}}>Очаг</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-                {/*            <StyledIconContainer>*/}
-                {/*                <StructureSix/>*/}
-                {/*                <IconText style={{marginBottom: '10px'}}>Камин</IconText>*/}
-                {/*            </StyledIconContainer>*/}
-
-                {/*        </IconsRow>*/}
-                {/*    </DropdownMenuContent>*/}
-                {/*)}*/}
 
                 <SubMenuItem
                     $isActive={activeItem === 'bathroom'}
@@ -358,11 +229,6 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('bathroom')} />
                 </SubMenuItem>
 
-                {/*{openDropdown === 'bathroom' && (*/}
-                {/*    <DropdownMenuContent isOpen={openDropdown === 'bathroom'}>*/}
-                {/*        <Input placeholder="Длина в мм" />*/}
-                {/*    </DropdownMenuContent>*/}
-                {/*)}*/}
 
             </SubMenuContainer>
 
