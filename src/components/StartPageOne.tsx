@@ -153,15 +153,15 @@ const Button = styled.button`
   }
 `;
 
-const Image = styled.img<{isSelected: boolean}>`
+const Image = styled.img<{$isSelected: boolean}>`
   width: 250px;
   height: 200px;
   cursor: pointer;
   border: 2px solid transparent;
   transition: border-color 0.3s;
   margin: 10px;
-  
-  ${props => props.isSelected && selectedStyle}
+
+  ${({ $isSelected }) => $isSelected && selectedStyle}
   background: none;
 
   &:first-child {
@@ -169,7 +169,7 @@ const Image = styled.img<{isSelected: boolean}>`
   }
 `;
 
-const ImagePlane = styled.img<{isSelected: boolean}>`
+const ImagePlane = styled.img<{$isSelected: boolean}>`
   width: 180px;
   height: 170px;
   cursor: pointer;
@@ -177,8 +177,8 @@ const ImagePlane = styled.img<{isSelected: boolean}>`
   transition: border-color 0.3s;
   margin: 5px;
   box-shadow: 0 4px 8px #00000040;
-  
-  ${props => props.isSelected && selectedStyle}
+
+  ${({ $isSelected }) => $isSelected && selectedStyle}
   background: none;
 
   &:first-child {
@@ -296,7 +296,7 @@ const SelectIcon = styled(SelectCircleIcon)<{isSelected: boolean}>`
 
 
 
-const RoomOption = styled.div<{isSelected: boolean}>`
+const RoomOption = styled.div<{$isSelected: boolean}>`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -313,13 +313,14 @@ const RoomOption = styled.div<{isSelected: boolean}>`
     }
   }
 
-  ${props => props.isSelected && `
+  ${props => props.$isSelected && `
     ${SelectIcon} {
       background-color: #8DC646;
       border-radius: 50%;
     }
   `}
 `;
+
 
 const RoomOptionsContainer = styled.div`
   display: flex;
@@ -430,13 +431,13 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                         <Image
                             src={imageOneSrc}
                             alt="Создать проект"
-                            isSelected={selectedImage === 'imageOne'}
+                            $isSelected={selectedImage === 'imageOne'}
                             onClick={selectImageOne}
                         />
                         <Image
                             src={imageTwoSrc}
                             alt="Выбрать типовой объект"
-                            isSelected={selectedImage === 'imageTwo'}
+                            $isSelected={selectedImage === 'imageTwo'}
                             onClick={selectImageTwo}
                         />
                     </ImagesContainer>
@@ -459,19 +460,19 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                         <ImagePlane
                             src={planeOneSrc}
                             alt=""
-                            isSelected={selectedPlane === 'planOne'}
+                            $isSelected={selectedPlane === 'planOne'}
                             onClick={selectPlaneOne}
                         />
                         <ImagePlane
                             src={planeTwoSrc}
                             alt=""
-                            isSelected={selectedPlane === 'planTwo'}
+                            $isSelected={selectedPlane === 'planTwo'}
                             onClick={selectPlaneTwo}
                         />
                         <ImagePlane
                             src={planeThreeSrc}
                             alt=""
-                            isSelected={selectedPlane === 'planThree'}
+                            $isSelected={selectedPlane === 'planThree'}
                             onClick={selectPlaneThree}
                         />
                         <StyledDynamicPlanFourSVG
@@ -503,7 +504,7 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                             {roomData.slice(0, 5).map(({ name, iconSrc }) => (
                                 <RoomOption
                                     key={name}
-                                    isSelected={selectedRooms[name]}
+                                    $isSelected={selectedRooms[name]}
                                     onClick={() => handleRoomSelect(name)}
                                 >
                                     <RoomOptionIcon src={iconSrc} alt={name} />
@@ -516,7 +517,7 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                             {roomData.slice(5).map(({ name, iconSrc }) => (
                                 <RoomOption
                                     key={name}
-                                    isSelected={selectedRooms[name]}
+                                    $isSelected={selectedRooms[name]}
                                     onClick={() => handleRoomSelect(name)}
                                 >
                                     <RoomOptionIcon src={iconSrc} alt={name} />
