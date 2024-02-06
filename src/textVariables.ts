@@ -66,6 +66,13 @@ export const slidingText = "Раздвижные";
 export const titleText = "Название";
 export const widthText = "Ширина (см):";
 export const priceText = "Цена ($):";
+export const widthLabel = "Ширина в мм";
+export const lengthLabel = "Длина в мм";
+export const heightLabel = "Высота в мм";
+export const thicknessLabel = "Толщина в мм";
+export const heightFromFloorLabel = "Высота от пола в мм";
+
+
 
 
 

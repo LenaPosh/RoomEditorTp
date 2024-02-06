@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 import imageOne from '../img/start1.png';
 import imageTwo from '../img/start2.png';
+import imageOne_en from '../img/start1en.png';
+import imageTwo_en from '../img/start2en.png'
 import {ArrowGreen, PlanFour, SelectCircleIcon} from "./Icon";
 import planOne from "../img/Планировка 1.png"
 import planTwo from '../img/Планировка 2.png'
@@ -28,6 +30,8 @@ import {
     subStartText2,
     toiletText
 } from "../textVariables";
+import {useTranslation} from "react-i18next";
+import i18n from "i18next";
 
 
 type StartProps = {
@@ -348,6 +352,9 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
     const selectPlaneThree = () => setSelectedPlane('planThree');
     const selectPlaneFour = () => setSelectedPlane('planFour');
 
+    const { t } = useTranslation();
+    const language = i18n.language;
+
     const handleNextClick = () => {
         if (selectedImage) {
             setCurrentPage(currentPage + 1);
@@ -376,16 +383,18 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
     };
 
     const roomData = [
-        { name: kitchenText, iconSrc: kitchenRoom },
-        { name: kitchenTwoText, iconSrc: kitchenRoomTwo },
-        { name: livingRoomText, iconSrc: livingRoom },
-        { name: bedroomText, iconSrc: badRoom },
-        { name: kidsRoomText, iconSrc: kidsRoom },
-        { name: bathroomText, iconSrc: bathroom },
-        { name: cabinetText, iconSrc: cabinet },
-        { name: toiletText, iconSrc: toilet },
+        { name: t('kitchenText'), iconSrc: kitchenRoom },
+        { name: t('kitchenTwoText'), iconSrc: kitchenRoomTwo },
+        { name: t('livingRoomText'), iconSrc: livingRoom },
+        { name: t('bedroomText'), iconSrc: badRoom },
+        { name: t('kidsRoomText'), iconSrc: kidsRoom },
+        { name: t('bathroomText'), iconSrc: bathroom },
+        { name: t('cabinetText'), iconSrc: cabinet },
+        { name: t('toiletText'), iconSrc: toilet },
     ];
 
+    const imageOneSrc = language === 'en' ? imageOne_en : imageOne;
+    const imageTwoSrc = language === 'en' ? imageTwo_en : imageTwo;
 
 
     return (
@@ -393,26 +402,26 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
             {currentPage === 1 && (
                 <StartPageContent>
                     <StartHeader>
-                        <StartText>{startText}</StartText>
-                        <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
+                        <StartText>{t('startText')}</StartText>
+                        <CloseButton onClick={onClose}>{t('closeButtonLabel')}</CloseButton>
                     </StartHeader>
 
                     <ImagesContainer>
                         <Image
-                            src={imageOne}
+                            src={imageOneSrc}
                             alt="Создать проект"
                             isSelected={selectedImage === 'imageOne'}
                             onClick={selectImageOne}
                         />
                         <Image
-                            src={imageTwo}
+                            src={imageTwoSrc}
                             alt="Выбрать типовой объект"
                             isSelected={selectedImage === 'imageTwo'}
                             onClick={selectImageTwo}
                         />
                     </ImagesContainer>
                     <ButtonContainerOne>
-                        <Button onClick={handleNextClick}>{nextButtonText}</Button>
+                        <Button onClick={handleNextClick}>{t('nextButtonText')}</Button>
                     </ButtonContainerOne>
                 </StartPageContent>
             )}
@@ -420,10 +429,10 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                 <StartPageContent>
                     <StartHeader>
                         <TextContainer>
-                            <StartText>{startText1} <GreenText>1/2</GreenText></StartText>
-                            <SubStartText>{subStartText1}</SubStartText>
+                            <StartText>{t('startText1')} <GreenText>1/2</GreenText></StartText>
+                            <SubStartText>{t('subStartText1')}</SubStartText>
                         </TextContainer>
-                        <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
+                        <CloseButton onClick={onClose}>{t('closeButtonLabel')}</CloseButton>
                     </StartHeader>
 
                     <ImagesContainerPlane>
@@ -453,7 +462,7 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                     </ImagesContainerPlane>
                     <ButtonContainer>
                         <StyledButtonBack onClick={handleBackClick}><ArrowGreen/></StyledButtonBack>
-                        <Button onClick={handleNextClick}>{nextButtonText}</Button>
+                        <Button onClick={handleNextClick}>{t('nextButtonText')}</Button>
                     </ButtonContainer>
 
                 </StartPageContent>
@@ -462,10 +471,10 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                 <StartPageContent>
                     <StartHeader>
                         <TextContainer>
-                            <StartText>{startText2} <GreenText>2/2</GreenText></StartText>
-                            <SubStartText>{subStartText2}</SubStartText>
+                            <StartText>{t('startText2')} <GreenText>2/2</GreenText></StartText>
+                            <SubStartText>{t('subStartText2')}</SubStartText>
                         </TextContainer>
-                        <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
+                        <CloseButton onClick={onClose}>{t('closeButtonLabel')}</CloseButton>
                     </StartHeader>
 
                     <RoomOptionsContainer>
@@ -501,7 +510,7 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                         <StyledButtonBack onClick={handleBackClick}>
                             <ArrowGreen/>
                         </StyledButtonBack>
-                        <Button onClick={handleCreateClick}>{createButtonText}</Button>
+                        <Button onClick={handleCreateClick}>{t('createButtonText')}</Button>
                     </ButtonContainer>
 
                 </StartPageContent>

@@ -69,6 +69,8 @@ const MenuRight = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
+  z-index: 1000; 
+  position: relative;
 `;
 
 const LanguageSwitcherButton = styled.button`

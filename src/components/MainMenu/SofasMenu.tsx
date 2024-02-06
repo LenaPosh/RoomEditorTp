@@ -25,6 +25,7 @@ import {
     titleText,
     widthText
 } from "../../textVariables";
+import {useTranslation} from "react-i18next";
 
 type SofasMenuProps = {
     activeItem: string;
@@ -83,6 +84,7 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
     const [width, setWidth] = useState(50);
     const [price, setPrice] = useState(500);
 
+    const { t } = useTranslation();
 
     const calculateContentHeight = () => {
         if (openDropdown === 'straight') {
@@ -130,13 +132,13 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
     return (
         <SubMenuContainer style={{ height: calculateContentHeight() }}>
             <SubMenuHeader>
-                <SubMenuTitle>{sofasText}</SubMenuTitle>
-                <CloseButton onClick={onBack}>{backButtonText}</CloseButton>
+                <SubMenuTitle>{t('sofasText')}</SubMenuTitle>
+                <CloseButton onClick={onBack}>{t('backButtonText')}</CloseButton>
             </SubMenuHeader>
 
             <SubMenuItem $isActive={activeItem === 'straight'}>
                 <StyledIconsSubMenu src={straight} alt="" />
-                <SubMenuText onClick={() => toggleDropdown('straight')}>{straightText}</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('straight')}>{t('straightText')}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('straight')} />
             </SubMenuItem>
             {openDropdown === 'straight' && (
@@ -144,44 +146,44 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
                     <IconsRow style={{marginTop: '-10px'}}>
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.sofas || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{titleText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{t('titleText')}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.armchairs  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('titleText')}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.tables  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-6px'}}>{titleText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-6px'}}>{t('titleText')}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.closet  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('titleText')}</IconText>
                         </IconContainer>
                     </IconsRow>
 
                     <IconsRow>
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.racks  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{titleText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{t('titleText')}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.chairs  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('titleText')}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.cabinets  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('titleText')}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.decor  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('titleText')}</IconText>
                         </IconContainer>
                     </IconsRow>
                 </DropdownMenuContent>
@@ -190,22 +192,22 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
 
             <SubMenuItem $isActive={activeItem === 'angular'}>
                 <StyledIconsSubMenu src={angular} alt="" />
-                <SubMenuText onClick={() => toggleDropdown('angular')}>{cornerText}</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('angular')}>{t('cornerText')}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('angular')} />
             </SubMenuItem>
 
             <SubMenuItem $isActive={activeItem === 'folding'}>
                 <StyledIconsSubMenu src={folding} alt='' />
-                <SubMenuText onClick={() => toggleDropdown('folding')}>{slidingText}</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('folding')}>{t('slidingText')}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('folding')}/>
             </SubMenuItem>
 
             <div>
-                <RangeLabel >{widthText} {width}</RangeLabel>
+                <RangeLabel >{t('widthText')} {width}</RangeLabel>
                 <RangeSlider style={{background: '#4CAF50'}} type="range" min="0" max="100" value={width} onChange={handleWidthChange} />
             </div>
             <div>
-                <RangeLabel>{priceText} {price}</RangeLabel>
+                <RangeLabel>{t('priceText')} {price}</RangeLabel>
                 <RangeSlider type="range" min="0" max="1000" value={price} onChange={handlePriceChange} />
             </div>
 

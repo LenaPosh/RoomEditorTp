@@ -33,6 +33,7 @@ import {
     kitchenTwoText,
     livingRoomText, racksText, sofasText, tablesText
 } from "../../textVariables";
+import {useTranslation} from "react-i18next";
 
 export const StyledIconsSubMenu = styled.img`
   width: 31px;
@@ -88,6 +89,7 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
     const [showSofasMenu, setShowSofasMenu] = useState(false);
 
+    const { t } = useTranslation();
     const toggleDropdown = (item: string) => {
         if (openDropdown === item) {
             setOpenDropdown(null);
@@ -131,13 +133,13 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
             ) : (
             <SubMenuContainer style={{ height: calculateContentHeight() }}>
                 <SubMenuHeader>
-                    <SubMenuTitle>{furnitureText}</SubMenuTitle>
-                    <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
+                    <SubMenuTitle>{t('furnitureText')}</SubMenuTitle>
+                    <CloseButton onClick={onClose}>{t('closeButtonLabel')}</CloseButton>
                 </SubMenuHeader>
 
                 <SubMenuItem $isActive={activeItem === 'livingRoom'}>
                     <StyledIconsSubMenu src={livingRoom} alt="" />
-                    <SubMenuText onClick={() => toggleDropdown('livingRoom')}>{livingRoomText}</SubMenuText>
+                    <SubMenuText onClick={() => toggleDropdown('livingRoom')}>{t('livingRoomText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('livingRoom')} />
                 </SubMenuItem>
                 {openDropdown === 'livingRoom' && (
@@ -145,44 +147,44 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                         <IconsRow style={{marginTop: '-10px'}}>
                             <IconContainer onClick={() => handleSofasClick()}>
                                 <StyledImgIcon src={sofas} alt="" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{sofasText}</IconText>
+                                <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{t('sofasText')}</IconText>
                             </IconContainer>
 
                             <IconContainer>
                                 <StyledImgIcon src={armchairs} alt="" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{armchairsText}</IconText>
+                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('armchairsText')}</IconText>
                             </IconContainer>
 
                             <IconContainer>
                                 <StyledImgIcon src={tables} alt="" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-6px'}}>{tablesText}</IconText>
+                                <IconText style={{marginTop: '-10px', marginLeft: '-6px'}}>{t('tablesText')}</IconText>
                             </IconContainer>
 
                             <IconContainer>
                                 <StyledImgIcon src={closet} alt="" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{closetText}</IconText>
+                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('closetText')}</IconText>
                             </IconContainer>
                         </IconsRow>
 
                         <IconsRow>
                             <IconContainer>
                                 <StyledImgIcon src={racks} alt="" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{racksText}</IconText>
+                                <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{t('racksText')}</IconText>
                             </IconContainer>
 
                             <IconContainer>
                                 <StyledImgIcon src={chairs} alt="" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{chairsText}</IconText>
+                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('chairsText')}</IconText>
                             </IconContainer>
 
                             <IconContainer>
                                 <StyledImgIcon src={cabinets} alt="" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{cabinetsText}</IconText>
+                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('cabinetsText')}</IconText>
                             </IconContainer>
 
                             <IconContainer>
                                 <StyledImgIcon src={decor} alt="" />
-                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{decorText}</IconText>
+                                <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{t('decorText')}</IconText>
                             </IconContainer>
                         </IconsRow>
                     </DropdownMenuContent>
@@ -191,7 +193,7 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
 
                 <SubMenuItem $isActive={activeItem === 'kitchen'}>
                     <StyledIconsSubMenu src={kitchenRoom} alt="" />
-                    <SubMenuText onClick={() => toggleDropdown('kitchen')}>{kitchenText}</SubMenuText>
+                    <SubMenuText onClick={() => toggleDropdown('kitchen')}>{t('kitchenText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kitchen')} />
                 </SubMenuItem>
                 {/*{openDropdown === 'kitchen' && (*/}
@@ -202,7 +204,7 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
 
                 <SubMenuItem $isActive={activeItem === 'kitchenTwo'}>
                     <StyledIconsSubMenu src={kitchenRoomTwo} alt='' />
-                    <SubMenuText onClick={() => toggleDropdown('kitchenTwo')}>{kitchenTwoText}</SubMenuText>
+                    <SubMenuText onClick={() => toggleDropdown('kitchenTwo')}>{t('kitchenTwoText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kitchenTwo')}/>
                 </SubMenuItem>
                 {/*{openDropdown === 'kitchenTwo' && (*/}
@@ -253,7 +255,7 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                     $isActive={activeItem === 'bedroom'}
                 >
                     <StyledIconsSubMenu src={badRoom} alt="" />
-                    <SubMenuText onClick={() => toggleDropdown('bedroom')}>{bedroomText}</SubMenuText>
+                    <SubMenuText onClick={() => toggleDropdown('bedroom')}>{t('bedroomText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('bedroom')} />
                 </SubMenuItem>
                 {/*{openDropdown === 'bedroom' && (*/}
@@ -304,7 +306,7 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                     $isActive={activeItem === 'kids'}
                 >
                     <StyledIconsSubMenu src={kidsRoom} alt="" />
-                    <SubMenuText onClick={() => toggleDropdown('kids')}>{kidsRoomText}</SubMenuText>
+                    <SubMenuText onClick={() => toggleDropdown('kids')}>{t('kidsRoomText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kids')} />
                 </SubMenuItem>
 
@@ -352,7 +354,7 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                     $isActive={activeItem === 'bathroom'}
                 >
                     <StyledIconsSubMenu src={bathroom} alt="" />
-                    <SubMenuText onClick={() => toggleDropdown('bathroom')}>{bathroomText}</SubMenuText>
+                    <SubMenuText onClick={() => toggleDropdown('bathroom')}>{t('bathroomText')}</SubMenuText>
                     <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('bathroom')} />
                 </SubMenuItem>
 

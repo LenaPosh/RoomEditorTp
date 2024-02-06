@@ -34,10 +34,10 @@ import {
     doubleSwingDoorText,
     doubleSwingWindowText,
     fireplaceMantelText,
-    fireplaceText,
+    fireplaceText, heightFromFloorLabel, heightLabel,
     installDoorText,
     installStructureText,
-    installWindowText,
+    installWindowText, lengthLabel,
     lShapedText,
     rectangularText,
     roundedText,
@@ -48,12 +48,13 @@ import {
     singleSwingDoorText,
     singleSwingWindowText,
     spiralStaircaseText,
-    staircaseRailingText, straightStaircaseText,
+    staircaseRailingText, straightStaircaseText, thicknessLabel,
     tripleSwingWindowText,
     tShapedText,
-    turnStaircaseText,
+    turnStaircaseText, widthLabel,
     zShapedText
 } from "../../textVariables";
+import {useTranslation} from "react-i18next";
 
 export type SubMenuProps = {
     activeItem: string;
@@ -213,6 +214,7 @@ export const IconText = styled.div`
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: pre-wrap;
 `;
 
 export const StyledIconContainer = styled(IconContainer)`
@@ -240,16 +242,11 @@ export const StyledIconContainer = styled(IconContainer)`
 
 `;
 
-// export const StairsTextComponent = () => (
-//     <p>
-//         Лестница<br />
-//         прямая
-//     </p>
-// );
 
 export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
+    const { t } = useTranslation();
     const toggleDropdown = (item: string) => {
         console.log('toggleDropdown called with item:', item);
         if (openDropdown === item) {
@@ -280,33 +277,33 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
     return (
         <SubMenuContainer style={{ height: calculateContentHeight() }}>
             <SubMenuHeader>
-                <SubMenuTitle>{buildText}</SubMenuTitle>
-                <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
+                <SubMenuTitle>{t('buildText')}</SubMenuTitle>
+                <CloseButton onClick={onClose}>{t('closeButtonLabel')}</CloseButton>
             </SubMenuHeader>
 
             <SubMenuItem                $isActive={activeItem === 'build'}>
                 <StyledIconsSubMenu src={createRoomIcon} alt="Build" />
-                <SubMenuText onClick={() => toggleDropdown('build')}>{buildRoomText}</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('build')}>{t('buildRoomText')}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('build')} />
             </SubMenuItem>
             {openDropdown === 'build' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'build'}>
-                        <Input placeholder="Ширина в мм" />
-                        <Input placeholder="Длина в мм" />
+                        <Input placeholder={t('widthLabel')} />
+                        <Input placeholder={t('lengthLabel')} />
                         <IconsRow>
                             <StyledIconContainer>
                                 <FormOne />
-                                <IconText style={{marginTop: '-15px', marginLeft: '-11px'}}>{rectangularText}</IconText>
+                                <IconText style={{marginTop: '-15px', marginLeft: '-11px'}}>{t('rectangularText')}</IconText>
                             </StyledIconContainer>
 
                             <StyledIconContainer>
                                 <FormTwo/>
-                                <IconText style={{marginTop: '-15px', marginLeft: '-8px'}}>{lShapedText}</IconText>
+                                <IconText style={{marginTop: '-15px', marginLeft: '-8px'}}>{t("lShapedText")}</IconText>
                             </StyledIconContainer>
 
                             <StyledIconContainer>
                                 <FormThree />
-                                <IconText style={{marginTop: '-15px'}}>{angledText}</IconText>
+                                <IconText style={{marginTop: '-15px'}}>{t('angledText')}</IconText>
                             </StyledIconContainer>
                         </IconsRow>
 
@@ -314,15 +311,15 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                         <IconsRow>
                             <StyledIconContainer>
                                 <FormFour/>
-                                <IconText style={{marginTop: '-5px', marginLeft: '-15px'}}>{tShapedText}</IconText>
+                                <IconText style={{marginTop: '-5px', marginLeft: '-15px'}}>{t('tShapedText')}</IconText>
                             </StyledIconContainer>
                             <StyledIconContainer>
                                 <FormFive />
-                                <IconText style={{marginTop: '-5px', marginLeft: '-8px'}}>{roundedText}</IconText>
+                                <IconText style={{marginTop: '-5px', marginLeft: '-8px'}}>{t('roundedText')}</IconText>
                             </StyledIconContainer>
                             <StyledIconContainer>
                                 <FormSix />
-                                <IconText style={{marginTop: '-5px'}}>{zShapedText}</IconText>
+                                <IconText style={{marginTop: '-5px'}}>{t('zShapedText')}</IconText>
                             </StyledIconContainer>
 
                         </IconsRow>
@@ -332,38 +329,38 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
 
             <SubMenuItem $isActive={activeItem === 'awall'}>
                 <StyledIconsSubMenu src={createAwall} alt="Awall" />
-                <SubMenuText onClick={() => toggleDropdown('awall')}>{buildWallText}</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('awall')}>{t('buildWallText')}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('awall')} />
             </SubMenuItem>
             {openDropdown === 'awall' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'awall'}>
-                    <Input placeholder="Толщина в мм" />
+                    <Input placeholder={t('thicknessLabel')} />
                 </DropdownMenuContent>
             )}
 
             <SubMenuItem $isActive={activeItem === 'door'}>
                 <StyledIconsSubMenu src={installDoor} alt="Door" />
-                <SubMenuText onClick={() => toggleDropdown('door')}>{installDoorText}</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('door')}>{t('installDoorText')}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('door')}/>
             </SubMenuItem>
             {openDropdown === 'door' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'door'}>
-                    <Input placeholder="Ширина в мм" />
-                    <Input placeholder="Длина в мм" />
+                    <Input placeholder={t('widthLabel')} />
+                    <Input placeholder={t('lengthLabel')} />
                     <IconsRow>
                         <StyledIconContainer>
                             <DoorOne/>
-                            <IconText style={{marginTop: '-10px'}}>{singleSwingDoorText}</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{t('singleSwingDoorText')}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <DoorTwo/>
-                            <IconText style={{marginTop: '-10px'}}>{doubleSwingDoorText}</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{t('doubleSwingDoorText')}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <DoorThree/>
-                            <IconText style={{marginTop: '-10px'}}>{singleSlidingDoorText}</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{t("singleSlidingDoorText")}</IconText>
                         </StyledIconContainer>
                     </IconsRow>
 
@@ -371,15 +368,15 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                     <IconsRow>
                         <StyledIconContainer>
                             <DoorFour />
-                            <IconText>{doubleSlidingDoorText}</IconText>
+                            <IconText>{t('doubleSlidingDoorText')}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <DoorFive />
-                            <IconText>{singleEmbeddedDoorText}</IconText>
+                            <IconText>{t('singleEmbeddedDoorText')}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <DoorSix/>
-                            <IconText>{doubleEmbeddedDoorText}</IconText>
+                            <IconText>{t('doubleEmbeddedDoorText')}</IconText>
                         </StyledIconContainer>
 
                     </IconsRow>
@@ -390,43 +387,43 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 $isActive={activeItem === 'window'}
             >
                 <StyledIconsSubMenu src={installWindow} alt="Window" />
-                <SubMenuText onClick={() => toggleDropdown('window')}>{installWindowText}</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('window')}>{t('installWindowText')}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('window')} />
             </SubMenuItem>
             {openDropdown === 'window' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'window'}>
-                    <Input placeholder="Ширина в мм" />
-                    <Input placeholder="Длина в мм" />
-                    <Input placeholder="Высота от пола в мм" />
+                    <Input placeholder={t('widthLabel')} />
+                    <Input placeholder={t('lengthLabel')}  />
+                    <Input placeholder={t('heightFromFloorLabel')} />
                     <IconsRow>
                         <StyledIconContainer>
                             <WindowOne/>
-                            <IconText style={{marginTop: '-10px'}}>{singleSwingWindowText}</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{t('singleSwingWindowText')}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <WindowTwo/>
-                            <IconText style={{marginTop: '-10px'}}>{doubleSwingWindowText}</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{t('doubleSwingWindowText')}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <WindowThree/>
-                            <IconText style={{marginTop: '-10px'}}>{tripleSwingWindowText}</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{t('tripleSwingWindowText')}</IconText>
                         </StyledIconContainer>
                     </IconsRow>
 
                     <IconsRow>
                         <StyledIconContainer>
                             <WindowFour/>
-                            <IconText>{singleFixedWindowText}</IconText>
+                            <IconText>{t('singleFixedWindowText')}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <WindowFive/>
-                            <IconText>{singleSlidingWindowText}</IconText>
+                            <IconText>{t('singleSlidingWindowText')}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <WindowSix/>
-                            <IconText>{doubleSlidingWindowText}</IconText>
+                            <IconText>{t('doubleSlidingWindowText')}</IconText>
                         </StyledIconContainer>
 
                     </IconsRow>
@@ -438,44 +435,44 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 $isActive={activeItem === 'structure'}
             >
                 <StyledIconsSubMenu src={structure} alt="Structure" />
-                <SubMenuText onClick={() => toggleDropdown('structure')}>{installStructureText}</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('structure')}>{t('installStructureText')}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('structure')} />
             </SubMenuItem>
 
             {openDropdown === 'structure' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'structure'}>
-                    <Input placeholder="Длина в мм" />
-                    <Input placeholder="Ширина в мм" />
-                    <Input placeholder="Высота в мм" />
+                    <Input placeholder={t('lengthLabel')} />
+                    <Input placeholder={t('widthLabel')} />
+                    <Input placeholder={t('heightLabel')} />
                     <IconsRow>
                         <StyledIconContainer>
                             <StructureOne/>
-                            <IconText style={{marginTop: '-10px', marginLeft: '-11px', whiteSpace: 'pre-wrap'}}>{straightStaircaseText}</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-11px', whiteSpace: 'pre-wrap'}}>{t('straightStaircaseText')}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <StructureTwo/>
-                            <IconText style={{marginTop: '-10px',  marginLeft: '-9px'}}>{turnStaircaseText}</IconText>
+                            <IconText style={{marginTop: '-10px',  marginLeft: '-9px'}}>{t('turnStaircaseText')}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <StructureThree/>
-                            <IconText style={{marginTop: '-10px'}}>{spiralStaircaseText}</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{t('spiralStaircaseText')}</IconText>
                         </StyledIconContainer>
                     </IconsRow>
 
                     <IconsRow>
                         <StyledIconContainer>
                             <StructureFour/>
-                            <IconText style={{ marginLeft: '-11px'}}>{staircaseRailingText}</IconText>
+                            <IconText style={{ marginLeft: '-11px'}}>{t('staircaseRailingText')}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <StructureFive/>
-                            <IconText style={{marginBottom: '10px', marginLeft: '-11px'}}>{fireplaceText}</IconText>
+                            <IconText style={{marginBottom: '10px', marginLeft: '-11px'}}>{t('fireplaceText')}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <StructureSix/>
-                            <IconText style={{marginBottom: '10px'}}>{fireplaceMantelText}</IconText>
+                            <IconText style={{marginBottom: '10px'}}>{t('fireplaceMantelText')}</IconText>
                         </StyledIconContainer>
 
                     </IconsRow>
