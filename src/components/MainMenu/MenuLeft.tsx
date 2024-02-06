@@ -5,6 +5,7 @@ import finishIcon from '../../img/Finishing.png';
 import furnitureIcon from '../../img/Furniture.png';
 import settingIcon from '../../img/Settings.png';
 import {buildText, finishingText, furnitureText, settingText} from "../../textVariables";
+import {useTranslation} from "react-i18next";
 
 
 type MenuLeftProps = {
@@ -107,6 +108,7 @@ const StyledIcons = styled.img`
 export const MenuLeft: React.FC<MenuLeftProps> = ({ onItemSelect }) => {
     const [activeItem, setActiveItem] = useState<string | null>(null);
 
+    const { t } = useTranslation();
     const handleMenuItemClick = (itemName: string) => {
         console.log('MenuLeft item clicked:', itemName);
         setActiveItem(itemName);
@@ -119,28 +121,28 @@ export const MenuLeft: React.FC<MenuLeftProps> = ({ onItemSelect }) => {
                 $isActive={activeItem === 'build'}
             >
                 <StyledIcons src={buildIcon} alt="Build" />
-                <MenuText>{buildText}</MenuText>
+                <MenuText>{t('buildText')}</MenuText>
             </MenuItem>
             <MenuItem
                 onClick={() => handleMenuItemClick('finishing')}
                 $isActive={activeItem === 'finishing'}
             >
                 <StyledIcons src={finishIcon} alt="finishing" />
-                <MenuText>{finishingText}</MenuText>
+                <MenuText>{t('finishingText')}</MenuText>
             </MenuItem>
             <MenuItem
                 onClick={() => handleMenuItemClick('furniture')}
                 $isActive={activeItem === 'furniture'}
             >
                 <StyledIcons src={furnitureIcon} alt="" />
-                <MenuText>{furnitureText}</MenuText>
+                <MenuText>{t('furnitureText')}</MenuText>
             </MenuItem>
             <MenuItem
                 onClick={() => handleMenuItemClick('setting')}
                 $isActive={activeItem === 'setting'}
             >
                 <StyledIcons src={settingIcon} alt="" />
-                <MenuText>{settingText}</MenuText>
+                <MenuText>{t('settingText')}</MenuText>
             </MenuItem>
 
         </MenuLeftContainer>

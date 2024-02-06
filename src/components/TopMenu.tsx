@@ -6,6 +6,7 @@ import folderIcon from '../img/Folder.png';
 import saveIcon from '../img/Save.png';
 import backIcon from '../img/Back.png';
 import {projectTitleText} from "../textVariables";
+import { useTranslation } from 'react-i18next';
 
 
 const MenuContainer = styled.div`
@@ -64,9 +65,34 @@ const StyledImg = styled.img`
   }
 `;
 
+const MenuRight = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 20px;
+`;
+
+const LanguageSwitcherButton = styled.button`
+  padding: 5px 10px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #e0e0e0;
+  }
+`;
+
 
 
 const TopMenu = () => {
+    const { t, i18n } = useTranslation();
+
+    const toggleLanguage = () => {
+        const nextLanguage = i18n.language === 'en' ? 'ru' : 'en';
+        i18n.changeLanguage(nextLanguage);
+    };
+
     return (
         <>
             <GlobalStyle/>
@@ -78,11 +104,15 @@ const TopMenu = () => {
                 </MenuLeft>
                 <MenuCenter>
                     <Title>
-                        <TitleText>{projectTitleText}</TitleText>
+                        <TitleText>{t('projectTitleText')}</TitleText>
                         <ArrowIcon />
-
                     </Title>
                 </MenuCenter>
+                <MenuRight>
+                    <LanguageSwitcherButton onClick={toggleLanguage}>
+                        {i18n.language === 'en' ? 'RU' : 'EN'}
+                    </LanguageSwitcherButton>
+                </MenuRight>
             </MenuContainer>
         </>
 
