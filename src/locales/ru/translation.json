@@ -3,6 +3,36 @@
   "finishingText": "Отделка",
   "projectTitleText": "Название проекта",
   "furnitureText": "Мебель",
-  "settingText": "Настройки"
+  "settingText": "Настройки",
+   "buildRoomText": "Построить комнату",
+   "rectangularText": "Прямоугольная",
+   "lShapedText": "Г-образная",
+   "angledText": "Срезанный угол",
+   "tShapedText": "Т-образная",
+   "roundedText": "Скругленная",
+   "zShapedText": "Z-образная",
+   "installDoorText": "Установить дверь",
+   "singleSwingDoorText": "Одностворчатая распашная",
+   "doubleSwingDoorText": "Двухстворчатая распашная",
+   "singleSlidingDoorText": "Одностворчатая раздвижная",
+   "doubleSlidingDoorText": "Двухстворчатая раздвижная",
+   "singleEmbeddedDoorText": "Одностворчатая встраиваемая",
+   "doubleEmbeddedDoorText": "Двухстворчатая встраиваемая",
+   "installWindowText": "Установить окно",
+   "singleSwingWindowText": "Одностворчатое распашное",
+   "doubleSwingWindowText": "Двухстворчатое распашное",
+   "tripleSwingWindowText": "Трехстворчатое распашное",
+   "singleFixedWindowText": "Одностворчатое глухое",
+   "singleSlidingWindowText": "Одностворчатое раздвижное",
+   "doubleSlidingWindowText": "Двухстворчатое раздвижное",
+   "installStructureText": "Установить конструкцию",
+   "turnStaircaseText": "Лестница поворотная",
+   "spiralStaircaseText": "Лестница винтовая",
+   "staircaseRailingText": "Лестничное ограждение",
+   "fireplaceText": "Очаг",
+   "fireplaceMantelText": "Камин",
+   "straightStaircaseText": "Лестница\nпрямая"
+
+
 }
 
