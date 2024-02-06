@@ -4,10 +4,13 @@ import imageOne from '../img/start1.png';
 import imageTwo from '../img/start2.png';
 import imageOne_en from '../img/start1en.png';
 import imageTwo_en from '../img/start2en.png'
-import {ArrowGreen, PlanFour, SelectCircleIcon} from "./Icon";
+import {ArrowGreen, PlanFourRu, PlanFourEn, SelectCircleIcon} from "./Icon";
 import planOne from "../img/Планировка 1.png"
+import planeOne_en from '../img/Планировка 1en.png'
 import planTwo from '../img/Планировка 2.png'
+import planTwo_en from '../img/Планировка 2en.png'
 import planThree from '../img/Планировка 3.png'
+import planThree_en from '../img/Планировка 3en.png'
 import kitchenRoom from '../img/kitchen2.png'
 import kitchenRoomTwo from '../img/kitchen.png'
 import livingRoom from '../img/sofa.png'
@@ -40,6 +43,11 @@ type StartProps = {
 
 type RoomSelectionState = {
     [key: string]: boolean;
+};
+
+type PlanFourProps = {
+    isSelected: boolean;
+    onClick: () => void;
 };
 
 const StartPageContainer = styled.div`
@@ -221,16 +229,27 @@ const ImagesContainerPlane = styled.div`
   }
 `;
 
-const StyledPlanFourSVG = styled(PlanFour)<{ isSelected: boolean }>`
+
+const selectedStyle = css`
+  border: 2px solid #8DC646;
+  border-radius: 10px;
+`;
+
+const DynamicPlanFourSVG: React.FC<PlanFourProps> = ({ isSelected, onClick }) => {
+    const { i18n } = useTranslation();
+    const SVGComponent = i18n.language === 'en' ? PlanFourEn : PlanFourRu;
+    return <SVGComponent isSelected={isSelected} onClick={onClick} />;
+};
+
+
+const StyledDynamicPlanFourSVG = styled(DynamicPlanFourSVG)<{ isSelected: boolean }>`
   cursor: pointer;
   transition: border-color 0.3s;
   box-shadow: 0 4px 8px #00000040;
 
     ${props => props.isSelected && selectedStyle}
     background: none;
-  
   }
-
     &.selected {
       border: 2px solid #8DC646;
       border-radius: 10px;
@@ -238,10 +257,6 @@ const StyledPlanFourSVG = styled(PlanFour)<{ isSelected: boolean }>`
     }
 `;
 
-const selectedStyle = css`
-  border: 2px solid #8DC646;
-  border-radius: 10px;
-`;
 
 
 const StyledButtonBack = styled.button`
@@ -396,6 +411,11 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
     const imageOneSrc = language === 'en' ? imageOne_en : imageOne;
     const imageTwoSrc = language === 'en' ? imageTwo_en : imageTwo;
 
+    const planeOneSrc = language === 'en' ? planeOne_en : planOne;
+    const planeTwoSrc = language === 'en' ? planTwo_en : planTwo;
+    const planeThreeSrc = language === 'en' ? planThree_en : planThree;
+
+
 
     return (
         <StartPageContainer>
@@ -437,27 +457,28 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
 
                     <ImagesContainerPlane>
                         <ImagePlane
-                            src={planOne}
+                            src={planeOneSrc}
                             alt=""
                             isSelected={selectedPlane === 'planOne'}
                             onClick={selectPlaneOne}
                         />
                         <ImagePlane
-                            src={planTwo}
+                            src={planeTwoSrc}
                             alt=""
                             isSelected={selectedPlane === 'planTwo'}
                             onClick={selectPlaneTwo}
                         />
                         <ImagePlane
-                            src={planThree}
+                            src={planeThreeSrc}
                             alt=""
                             isSelected={selectedPlane === 'planThree'}
                             onClick={selectPlaneThree}
                         />
-                        <StyledPlanFourSVG
+                        <StyledDynamicPlanFourSVG
                             isSelected={selectedPlane === 'planFour'}
                             onClick={selectPlaneFour}
                         />
+
 
                     </ImagesContainerPlane>
                     <ButtonContainer>
