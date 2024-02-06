@@ -22,6 +22,38 @@ import {
     WindowThree,
     WindowTwo
 } from "../Icon";
+import {
+    angledText,
+    buildRoomText,
+    buildText,
+    buildWallText,
+    closeButtonLabel,
+    doubleEmbeddedDoorText,
+    doubleSlidingDoorText,
+    doubleSlidingWindowText,
+    doubleSwingDoorText,
+    doubleSwingWindowText,
+    fireplaceMantelText,
+    fireplaceText,
+    installDoorText,
+    installStructureText,
+    installWindowText,
+    lShapedText,
+    rectangularText,
+    roundedText,
+    singleEmbeddedDoorText,
+    singleFixedWindowText,
+    singleSlidingDoorText,
+    singleSlidingWindowText,
+    singleSwingDoorText,
+    singleSwingWindowText,
+    spiralStaircaseText,
+    staircaseRailingText, straightStaircaseText,
+    tripleSwingWindowText,
+    tShapedText,
+    turnStaircaseText,
+    zShapedText
+} from "../../textVariables";
 
 export type SubMenuProps = {
     activeItem: string;
@@ -208,6 +240,12 @@ export const StyledIconContainer = styled(IconContainer)`
 
 `;
 
+// export const StairsTextComponent = () => (
+//     <p>
+//         Лестница<br />
+//         прямая
+//     </p>
+// );
 
 export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -242,13 +280,13 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
     return (
         <SubMenuContainer style={{ height: calculateContentHeight() }}>
             <SubMenuHeader>
-                <SubMenuTitle>Стройка</SubMenuTitle>
-                <CloseButton onClick={onClose}>Закрыть</CloseButton>
+                <SubMenuTitle>{buildText}</SubMenuTitle>
+                <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
             </SubMenuHeader>
 
             <SubMenuItem                $isActive={activeItem === 'build'}>
                 <StyledIconsSubMenu src={createRoomIcon} alt="Build" />
-                <SubMenuText onClick={() => toggleDropdown('build')}>Построить комнату</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('build')}>{buildRoomText}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('build')} />
             </SubMenuItem>
             {openDropdown === 'build' && (
@@ -258,17 +296,17 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                         <IconsRow>
                             <StyledIconContainer>
                                 <FormOne />
-                                <IconText style={{marginTop: '-15px', marginLeft: '-11px'}}>Прямоугольная</IconText>
+                                <IconText style={{marginTop: '-15px', marginLeft: '-11px'}}>{rectangularText}</IconText>
                             </StyledIconContainer>
 
                             <StyledIconContainer>
                                 <FormTwo/>
-                                <IconText style={{marginTop: '-15px', marginLeft: '-8px'}}>Г-образная</IconText>
+                                <IconText style={{marginTop: '-15px', marginLeft: '-8px'}}>{lShapedText}</IconText>
                             </StyledIconContainer>
 
                             <StyledIconContainer>
                                 <FormThree />
-                                <IconText style={{marginTop: '-15px'}}>Срезанный угол</IconText>
+                                <IconText style={{marginTop: '-15px'}}>{angledText}</IconText>
                             </StyledIconContainer>
                         </IconsRow>
 
@@ -276,15 +314,15 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                         <IconsRow>
                             <StyledIconContainer>
                                 <FormFour/>
-                                <IconText style={{marginTop: '-5px', marginLeft: '-15px'}}>Т-образная</IconText>
+                                <IconText style={{marginTop: '-5px', marginLeft: '-15px'}}>{tShapedText}</IconText>
                             </StyledIconContainer>
                             <StyledIconContainer>
                                 <FormFive />
-                                <IconText style={{marginTop: '-5px', marginLeft: '-8px'}}>Скругленная</IconText>
+                                <IconText style={{marginTop: '-5px', marginLeft: '-8px'}}>{roundedText}</IconText>
                             </StyledIconContainer>
                             <StyledIconContainer>
                                 <FormSix />
-                                <IconText style={{marginTop: '-5px'}}>Z-образная</IconText>
+                                <IconText style={{marginTop: '-5px'}}>{zShapedText}</IconText>
                             </StyledIconContainer>
 
                         </IconsRow>
@@ -294,7 +332,7 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
 
             <SubMenuItem $isActive={activeItem === 'awall'}>
                 <StyledIconsSubMenu src={createAwall} alt="Awall" />
-                <SubMenuText onClick={() => toggleDropdown('awall')}>Построить стену</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('awall')}>{buildWallText}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('awall')} />
             </SubMenuItem>
             {openDropdown === 'awall' && (
@@ -305,7 +343,7 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
 
             <SubMenuItem $isActive={activeItem === 'door'}>
                 <StyledIconsSubMenu src={installDoor} alt="Door" />
-                <SubMenuText onClick={() => toggleDropdown('door')}>Установить дверь</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('door')}>{installDoorText}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('door')}/>
             </SubMenuItem>
             {openDropdown === 'door' && (
@@ -315,20 +353,17 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                     <IconsRow>
                         <StyledIconContainer>
                             <DoorOne/>
-                            <IconText style={{marginTop: '-10px'}}>Одностворчатая
-                                распашная</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{singleSwingDoorText}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <DoorTwo/>
-                            <IconText style={{marginTop: '-10px'}}>Двухстворчатая
-                                распашная</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{doubleSwingDoorText}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <DoorThree/>
-                            <IconText style={{marginTop: '-10px'}}>Одностворчатая
-                                раздвижная</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{singleSlidingDoorText}</IconText>
                         </StyledIconContainer>
                     </IconsRow>
 
@@ -336,16 +371,15 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                     <IconsRow>
                         <StyledIconContainer>
                             <DoorFour />
-                            <IconText>Двухстворчатая
-                                раздвижная</IconText>
+                            <IconText>{doubleSlidingDoorText}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <DoorFive />
-                            <IconText>Одностворчатая встраиваемая</IconText>
+                            <IconText>{singleEmbeddedDoorText}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <DoorSix/>
-                            <IconText>Двухстворчатая встраиваемая</IconText>
+                            <IconText>{doubleEmbeddedDoorText}</IconText>
                         </StyledIconContainer>
 
                     </IconsRow>
@@ -356,7 +390,7 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 $isActive={activeItem === 'window'}
             >
                 <StyledIconsSubMenu src={installWindow} alt="Window" />
-                <SubMenuText onClick={() => toggleDropdown('window')}>Установить окно</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('window')}>{installWindowText}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('window')} />
             </SubMenuItem>
             {openDropdown === 'window' && (
@@ -367,35 +401,32 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                     <IconsRow>
                         <StyledIconContainer>
                             <WindowOne/>
-                            <IconText style={{marginTop: '-10px'}}>Одностворчатое
-                                распашное</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{singleSwingWindowText}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <WindowTwo/>
-                            <IconText style={{marginTop: '-10px'}}>Двухстворчатое
-                                распашное</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{doubleSwingWindowText}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <WindowThree/>
-                            <IconText style={{marginTop: '-10px'}}>Трехстворчатое
-                                распашное</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{tripleSwingWindowText}</IconText>
                         </StyledIconContainer>
                     </IconsRow>
 
                     <IconsRow>
                         <StyledIconContainer>
                             <WindowFour/>
-                            <IconText>Одностворчатое глухое</IconText>
+                            <IconText>{singleFixedWindowText}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <WindowFive/>
-                            <IconText>Одностворчатое раздвижное</IconText>
+                            <IconText>{singleSlidingWindowText}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <WindowSix/>
-                            <IconText>Двухстворчатое раздвижное</IconText>
+                            <IconText>{doubleSlidingWindowText}</IconText>
                         </StyledIconContainer>
 
                     </IconsRow>
@@ -407,7 +438,7 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 $isActive={activeItem === 'structure'}
             >
                 <StyledIconsSubMenu src={structure} alt="Structure" />
-                <SubMenuText onClick={() => toggleDropdown('structure')}>Установить конструкцию</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('structure')}>{installStructureText}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('structure')} />
             </SubMenuItem>
 
@@ -419,32 +450,32 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                     <IconsRow>
                         <StyledIconContainer>
                             <StructureOne/>
-                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>Лестница <br/> прямая</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-11px', whiteSpace: 'pre-wrap'}}>{straightStaircaseText}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <StructureTwo/>
-                            <IconText style={{marginTop: '-10px',  marginLeft: '-9px'}}>Лестница поворотная</IconText>
+                            <IconText style={{marginTop: '-10px',  marginLeft: '-9px'}}>{turnStaircaseText}</IconText>
                         </StyledIconContainer>
 
                         <StyledIconContainer>
                             <StructureThree/>
-                            <IconText style={{marginTop: '-10px'}}>Лестница винтовая</IconText>
+                            <IconText style={{marginTop: '-10px'}}>{spiralStaircaseText}</IconText>
                         </StyledIconContainer>
                     </IconsRow>
 
                     <IconsRow>
                         <StyledIconContainer>
                             <StructureFour/>
-                            <IconText style={{ marginLeft: '-11px'}}>Лестничное ограждение</IconText>
+                            <IconText style={{ marginLeft: '-11px'}}>{staircaseRailingText}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <StructureFive/>
-                            <IconText style={{marginBottom: '10px', marginLeft: '-11px'}}>Очаг</IconText>
+                            <IconText style={{marginBottom: '10px', marginLeft: '-11px'}}>{fireplaceText}</IconText>
                         </StyledIconContainer>
                         <StyledIconContainer>
                             <StructureSix/>
-                            <IconText style={{marginBottom: '10px'}}>Камин</IconText>
+                            <IconText style={{marginBottom: '10px'}}>{fireplaceMantelText}</IconText>
                         </StyledIconContainer>
 
                     </IconsRow>

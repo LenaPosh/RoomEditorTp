@@ -5,6 +5,7 @@ import {GlobalStyle} from "./form/FormStyles";
 import folderIcon from '../img/Folder.png';
 import saveIcon from '../img/Save.png';
 import backIcon from '../img/Back.png';
+import {projectTitleText} from "../textVariables";
 
 
 const MenuContainer = styled.div`
@@ -77,7 +78,7 @@ const TopMenu = () => {
                 </MenuLeft>
                 <MenuCenter>
                     <Title>
-                        <TitleText>Название проекта</TitleText>
+                        <TitleText>{projectTitleText}</TitleText>
                         <ArrowIcon />
 
                     </Title>

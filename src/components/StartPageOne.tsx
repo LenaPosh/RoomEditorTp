@@ -15,6 +15,19 @@ import bathroom from '../img/bath.png'
 import cabinet from '../img/кабинет.png'
 import toilet from '../img/tw.png'
 import { useNavigate } from 'react-router-dom';
+import {
+    bathroomText,
+    bedroomText,
+    cabinetText,
+    closeButtonLabel, createButtonText, kidsRoomText, kitchenText, kitchenTwoText, livingRoomText,
+    nextButtonText,
+    startText,
+    startText1,
+    startText2,
+    subStartText1,
+    subStartText2,
+    toiletText
+} from "../textVariables";
 
 
 type StartProps = {
@@ -363,15 +376,16 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
     };
 
     const roomData = [
-        { name: 'Кухня', iconSrc: kitchenRoom },
-        { name: 'Столовая', iconSrc: kitchenRoomTwo },
-        { name: 'Гостинная', iconSrc: livingRoom },
-        { name: 'Спальня', iconSrc: badRoom },
-        { name: 'Детская', iconSrc: kidsRoom },
-        { name: 'Ванная', iconSrc: bathroom },
-        { name: 'Кабинет', iconSrc: cabinet },
-        { name: 'Туалет', iconSrc: toilet },
+        { name: kitchenText, iconSrc: kitchenRoom },
+        { name: kitchenTwoText, iconSrc: kitchenRoomTwo },
+        { name: livingRoomText, iconSrc: livingRoom },
+        { name: bedroomText, iconSrc: badRoom },
+        { name: kidsRoomText, iconSrc: kidsRoom },
+        { name: bathroomText, iconSrc: bathroom },
+        { name: cabinetText, iconSrc: cabinet },
+        { name: toiletText, iconSrc: toilet },
     ];
+
 
 
     return (
@@ -379,8 +393,8 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
             {currentPage === 1 && (
                 <StartPageContent>
                     <StartHeader>
-                        <StartText>Начать новый проект</StartText>
-                        <CloseButton onClick={onClose}>Закрыть</CloseButton>
+                        <StartText>{startText}</StartText>
+                        <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
                     </StartHeader>
 
                     <ImagesContainer>
@@ -398,7 +412,7 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                         />
                     </ImagesContainer>
                     <ButtonContainerOne>
-                        <Button onClick={handleNextClick}>Далее</Button>
+                        <Button onClick={handleNextClick}>{nextButtonText}</Button>
                     </ButtonContainerOne>
                 </StartPageContent>
             )}
@@ -406,10 +420,10 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                 <StartPageContent>
                     <StartHeader>
                         <TextContainer>
-                            <StartText>Типовые планировки <GreenText>1/2</GreenText></StartText>
-                            <SubStartText>Выберите типовую планировку, приближенную к вашей ситуции:</SubStartText>
+                            <StartText>{startText1} <GreenText>1/2</GreenText></StartText>
+                            <SubStartText>{subStartText1}</SubStartText>
                         </TextContainer>
-                        <CloseButton onClick={onClose}>Закрыть</CloseButton>
+                        <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
                     </StartHeader>
 
                     <ImagesContainerPlane>
@@ -439,7 +453,7 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                     </ImagesContainerPlane>
                     <ButtonContainer>
                         <StyledButtonBack onClick={handleBackClick}><ArrowGreen/></StyledButtonBack>
-                        <Button onClick={handleNextClick}>Далее</Button>
+                        <Button onClick={handleNextClick}>{nextButtonText}</Button>
                     </ButtonContainer>
 
                 </StartPageContent>
@@ -448,10 +462,10 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                 <StartPageContent>
                     <StartHeader>
                         <TextContainer>
-                            <StartText>Назначение помещения <GreenText>2/2</GreenText></StartText>
-                            <SubStartText>Выберите функцию комнаты:</SubStartText>
+                            <StartText>{startText2} <GreenText>2/2</GreenText></StartText>
+                            <SubStartText>{subStartText2}</SubStartText>
                         </TextContainer>
-                        <CloseButton onClick={onClose}>Закрыть</CloseButton>
+                        <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
                     </StartHeader>
 
                     <RoomOptionsContainer>
@@ -487,7 +501,7 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                         <StyledButtonBack onClick={handleBackClick}>
                             <ArrowGreen/>
                         </StyledButtonBack>
-                        <Button onClick={handleCreateClick}>Создать</Button>
+                        <Button onClick={handleCreateClick}>{createButtonText}</Button>
                     </ButtonContainer>
 
                 </StartPageContent>

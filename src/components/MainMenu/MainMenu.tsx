@@ -65,17 +65,7 @@ export const MainMenu: React.FC = () => {
 
             </PageContainer>
         </>
-        // <>
-        //     <GlobalStyle />
-        //     <PageContainer>
-        //         <MenuLeft onItemSelect={handleMenuClick} />
-        //         {activeMenuItem === 'item1' && <SubMenuBuild activeItem={activeMenuItem} onClose={handleCloseSubMenu} />}
-        //         {/*{activeMenuItem === 'item2' && <SubmenuFinish onClose={handleCloseSubMenu} />}*/}
-        //         {/*{activeMenuItem === 'item3' && <SubmenuFurniture onClose={handleCloseSubMenu} />}*/}
-        //         {/*{activeMenuItem === 'item4' && <SubmenuSettings onClose={handleCloseSubMenu} />}*/}
-        //     <MainHeaderIcon/>
-        //     </PageContainer>
-        // </>
+
     );
 };
 

@@ -26,7 +26,7 @@ import SofasMenu from "./SofasMenu";
 import {
     armchairsText,
     bathroomText,
-    bedroomText, cabinetsText, chairsText, closetText, decorText,
+    bedroomText, cabinetsText, chairsText, closeButtonLabel, closetText, decorText,
     furnitureText,
     kidsRoomText,
     kitchenText,
@@ -132,7 +132,7 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
             <SubMenuContainer style={{ height: calculateContentHeight() }}>
                 <SubMenuHeader>
                     <SubMenuTitle>{furnitureText}</SubMenuTitle>
-                    <CloseButton onClick={onClose}>Закрыть</CloseButton>
+                    <CloseButton onClick={onClose}>{closeButtonLabel}</CloseButton>
                 </SubMenuHeader>
 
                 <SubMenuItem $isActive={activeItem === 'livingRoom'}>

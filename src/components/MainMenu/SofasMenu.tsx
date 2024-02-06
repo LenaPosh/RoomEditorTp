@@ -16,6 +16,15 @@ import angular from '../../img/угловые.png'
 import folding from '../../img/раскладные.png'
 import axios from "axios";
 import styled from "styled-components";
+import {
+    backButtonText,
+    cornerText, priceText,
+    slidingText,
+    sofasText,
+    straightText,
+    titleText,
+    widthText
+} from "../../textVariables";
 
 type SofasMenuProps = {
     activeItem: string;
@@ -121,13 +130,13 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
     return (
         <SubMenuContainer style={{ height: calculateContentHeight() }}>
             <SubMenuHeader>
-                <SubMenuTitle>Диваны</SubMenuTitle>
-                <CloseButton onClick={onBack}>Назад</CloseButton>
+                <SubMenuTitle>{sofasText}</SubMenuTitle>
+                <CloseButton onClick={onBack}>{backButtonText}</CloseButton>
             </SubMenuHeader>
 
             <SubMenuItem $isActive={activeItem === 'straight'}>
                 <StyledIconsSubMenu src={straight} alt="" />
-                <SubMenuText onClick={() => toggleDropdown('straight')}>Прямые</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('straight')}>{straightText}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('straight')} />
             </SubMenuItem>
             {openDropdown === 'straight' && (
@@ -135,44 +144,44 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
                     <IconsRow style={{marginTop: '-10px'}}>
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.sofas || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>Диван</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{titleText}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.armchairs  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>Диван</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.tables  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-6px'}}>Диван</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-6px'}}>{titleText}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.closet  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>Диван</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
                         </IconContainer>
                     </IconsRow>
 
                     <IconsRow>
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.racks  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>Диван</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-11px'}}>{titleText}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.chairs  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>Диван</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.cabinets  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>Диван</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
                         </IconContainer>
 
                         <IconContainer>
                             <StyledImgIcon src={sofaImages.decor  || sofas} alt="" />
-                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>Диван</IconText>
+                            <IconText style={{marginTop: '-10px', marginLeft: '-8px'}}>{titleText}</IconText>
                         </IconContainer>
                     </IconsRow>
                 </DropdownMenuContent>
@@ -181,22 +190,22 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
 
             <SubMenuItem $isActive={activeItem === 'angular'}>
                 <StyledIconsSubMenu src={angular} alt="" />
-                <SubMenuText onClick={() => toggleDropdown('angular')}>Угловые</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('angular')}>{cornerText}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('angular')} />
             </SubMenuItem>
 
             <SubMenuItem $isActive={activeItem === 'folding'}>
                 <StyledIconsSubMenu src={folding} alt='' />
-                <SubMenuText onClick={() => toggleDropdown('folding')}>Раздвижные</SubMenuText>
+                <SubMenuText onClick={() => toggleDropdown('folding')}>{slidingText}</SubMenuText>
                 <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('folding')}/>
             </SubMenuItem>
 
             <div>
-                <RangeLabel >Ширина (см): {width}</RangeLabel>
+                <RangeLabel >{widthText} {width}</RangeLabel>
                 <RangeSlider style={{background: '#4CAF50'}} type="range" min="0" max="100" value={width} onChange={handleWidthChange} />
             </div>
             <div>
-                <RangeLabel>Цена ($): {price}</RangeLabel>
+                <RangeLabel>{priceText} {price}</RangeLabel>
                 <RangeSlider type="range" min="0" max="1000" value={price} onChange={handlePriceChange} />
             </div>
 
