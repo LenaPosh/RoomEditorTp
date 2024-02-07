@@ -49,6 +49,7 @@ const SubMenuItem = styled.div<{ $isActive: boolean }>`
   padding: 10px;
   background-color: ${({ $isActive }) => $isActive ? '#e8e8e8' : 'transparent'};
   border-radius: 20px;
+  cursor: pointer;
 
   &:hover {
     background-color: #e8e8e8;
@@ -104,13 +105,13 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
         } else if (openDropdown === 'kitchen') {
             return '390px';
         } else if (openDropdown === 'kitchenTwo') {
-            return '540px';
+            return '370px';
         } else if (openDropdown === 'bedroom') {
-            return '530px';
+            return '370px';
         }  else if (openDropdown === 'kids') {
-            return '550px';
+            return '370px';
         }  else if (openDropdown === 'bathroom') {
-            return '550px';
+            return '370px';
         }
         return '370px';
     };
@@ -137,10 +138,10 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                     <CloseButton onClick={onClose}>{t('closeButtonLabel')}</CloseButton>
                 </SubMenuHeader>
 
-                <SubMenuItem $isActive={activeItem === 'livingRoom'}>
+                <SubMenuItem $isActive={activeItem === 'livingRoom'} onClick={() => toggleDropdown('livingRoom')}>
                     <StyledIconsSubMenu src={livingRoom} alt="" />
                     <SubMenuText onClick={() => toggleDropdown('livingRoom')}>{t('livingRoomText')}</SubMenuText>
-                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('livingRoom')} />
+                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
                 </SubMenuItem>
                 {openDropdown === 'livingRoom' && (
                     <DropdownMenuContent $isOpen={openDropdown === 'livingRoom'}>
@@ -191,42 +192,42 @@ export const SubMenuFurniture: React.FC<SubMenuProps> = ({ activeItem, onClose }
                 )}
 
 
-                <SubMenuItem $isActive={activeItem === 'kitchen'}>
+                <SubMenuItem $isActive={activeItem === 'kitchen'} onClick={() => toggleDropdown('kitchen')}>
                     <StyledIconsSubMenu src={kitchenRoom} alt="" />
                     <SubMenuText onClick={() => toggleDropdown('kitchen')}>{t('kitchenText')}</SubMenuText>
-                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kitchen')} />
+                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
                 </SubMenuItem>
 
-                <SubMenuItem $isActive={activeItem === 'kitchenTwo'}>
+                <SubMenuItem $isActive={activeItem === 'kitchenTwo'} onClick={() => toggleDropdown('kitchenTwo')}>
                     <StyledIconsSubMenu src={kitchenRoomTwo} alt='' />
                     <SubMenuText onClick={() => toggleDropdown('kitchenTwo')}>{t('kitchenTwoText')}</SubMenuText>
-                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kitchenTwo')}/>
+                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down" />
                 </SubMenuItem>
 
                 <SubMenuItem
-                    $isActive={activeItem === 'bedroom'}
+                    $isActive={activeItem === 'bedroom'} onClick={() => toggleDropdown('bedroom')}
                 >
                     <StyledIconsSubMenu src={badRoom} alt="" />
                     <SubMenuText onClick={() => toggleDropdown('bedroom')}>{t('bedroomText')}</SubMenuText>
-                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('bedroom')} />
+                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
                 </SubMenuItem>
 
 
                 <SubMenuItem
-                    $isActive={activeItem === 'kids'}
+                    $isActive={activeItem === 'kids'} onClick={() => toggleDropdown('kids')}
                 >
                     <StyledIconsSubMenu src={kidsRoom} alt="" />
                     <SubMenuText onClick={() => toggleDropdown('kids')}>{t('kidsRoomText')}</SubMenuText>
-                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('kids')} />
+                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
                 </SubMenuItem>
 
 
                 <SubMenuItem
-                    $isActive={activeItem === 'bathroom'}
+                    $isActive={activeItem === 'bathroom'} onClick={() => toggleDropdown('bathroom')}
                 >
                     <StyledIconsSubMenu src={bathroom} alt="" />
                     <SubMenuText onClick={() => toggleDropdown('bathroom')}>{t('bathroomText')}</SubMenuText>
-                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('bathroom')} />
+                    <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
                 </SubMenuItem>
 
 

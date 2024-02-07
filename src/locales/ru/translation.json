@@ -68,7 +68,8 @@
    "subStartText2": "Выберите функцию комнаты:",
    "createButtonText": "Создать",
    "cabinetText": "Кабинет",
-   "toiletText": "Туалет"
+   "toiletText": "Туалет",
+   "alertMessage": "Пожалуйста, выберите объект перед переходом дальше."
 
 
 

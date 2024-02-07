@@ -68,5 +68,6 @@
   "subStartText2": "Select room function:",
   "createButtonText": "Create",
   "cabinetText": "Cabinet",
-  "toiletText": "Toilet"
+  "toiletText": "Toilet",
+  "alertMessage": "Please, select an object before moving on."
 }

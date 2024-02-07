@@ -136,10 +136,10 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
                 <CloseButton onClick={onBack}>{t('backButtonText')}</CloseButton>
             </SubMenuHeader>
 
-            <SubMenuItem $isActive={activeItem === 'straight'}>
+            <SubMenuItem $isActive={activeItem === 'straight'} onClick={() => toggleDropdown('straight')}>
                 <StyledIconsSubMenu src={straight} alt="" />
                 <SubMenuText onClick={() => toggleDropdown('straight')}>{t('straightText')}</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('straight')} />
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
             </SubMenuItem>
             {openDropdown === 'straight' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'straight'}>
@@ -190,16 +190,16 @@ const SofasMenu: React.FC<SofasMenuProps> = ({activeItem, onBack }) => {
             )}
 
 
-            <SubMenuItem $isActive={activeItem === 'angular'}>
+            <SubMenuItem $isActive={activeItem === 'angular'} onClick={() => toggleDropdown('angular')}>
                 <StyledIconsSubMenu src={angular} alt="" />
                 <SubMenuText onClick={() => toggleDropdown('angular')}>{t('cornerText')}</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('angular')} />
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
             </SubMenuItem>
 
-            <SubMenuItem $isActive={activeItem === 'folding'}>
+            <SubMenuItem $isActive={activeItem === 'folding'} onClick={() => toggleDropdown('folding')}>
                 <StyledIconsSubMenu src={folding} alt='' />
                 <SubMenuText onClick={() => toggleDropdown('folding')}>{t('slidingText')}</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('folding')}/>
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" />
             </SubMenuItem>
 
             <div>

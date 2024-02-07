@@ -76,6 +76,7 @@ const MenuItem = styled.div<{ $isActive: boolean }>`
 
   &:hover {
     background-color: #e8e8e8;
+    border-radius: 20px;
   }
 
   @media (max-width: 768px) {

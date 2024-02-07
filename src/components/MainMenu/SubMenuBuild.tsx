@@ -99,6 +99,7 @@ export const SubMenuItem = styled.div<{ $isActive: boolean }>`
   padding: 5px;
   background-color: transparent;
   border-radius: 20px;
+  cursor: pointer;
 
   &:hover, &:active {
     background-color: #e8e8e8;
@@ -129,6 +130,7 @@ export const SubMenuText = styled.span`
   font-style: normal;
   line-height: 1.2;
   padding: 0 5px;
+  cursor: pointer;
 `;
 
 export const CloseButton = styled.button`
@@ -281,10 +283,10 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 <CloseButton onClick={onClose}>{t('closeButtonLabel')}</CloseButton>
             </SubMenuHeader>
 
-            <SubMenuItem                $isActive={activeItem === 'build'}>
+            <SubMenuItem                $isActive={activeItem === 'build'} onClick={() => toggleDropdown('build')}>
                 <StyledIconsSubMenu src={createRoomIcon} alt="Build" />
                 <SubMenuText onClick={() => toggleDropdown('build')}>{t('buildRoomText')}</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('build')} />
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
             </SubMenuItem>
             {openDropdown === 'build' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'build'}>
@@ -327,10 +329,10 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
             )}
 
 
-            <SubMenuItem $isActive={activeItem === 'awall'}>
+            <SubMenuItem $isActive={activeItem === 'awall'} onClick={() => toggleDropdown('awall')}>
                 <StyledIconsSubMenu src={createAwall} alt="Awall" />
                 <SubMenuText onClick={() => toggleDropdown('awall')}>{t('buildWallText')}</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('awall')} />
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
             </SubMenuItem>
             {openDropdown === 'awall' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'awall'}>
@@ -338,10 +340,10 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 </DropdownMenuContent>
             )}
 
-            <SubMenuItem $isActive={activeItem === 'door'}>
+            <SubMenuItem $isActive={activeItem === 'door'} onClick={() => toggleDropdown('door')}>
                 <StyledIconsSubMenu src={installDoor} alt="Door" />
                 <SubMenuText onClick={() => toggleDropdown('door')}>{t('installDoorText')}</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('door')}/>
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" />
             </SubMenuItem>
             {openDropdown === 'door' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'door'}>
@@ -383,12 +385,11 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
                 </DropdownMenuContent>
             )}
 
-            <SubMenuItem
-                $isActive={activeItem === 'window'}
+            <SubMenuItem $isActive={activeItem === 'window'}  onClick={() => toggleDropdown('window')}
             >
                 <StyledIconsSubMenu src={installWindow} alt="Window" />
                 <SubMenuText onClick={() => toggleDropdown('window')}>{t('installWindowText')}</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('window')} />
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
             </SubMenuItem>
             {openDropdown === 'window' && (
                 <DropdownMenuContent $isOpen={openDropdown === 'window'}>
@@ -432,11 +433,11 @@ export const SubMenuBuild: React.FC<SubMenuProps> = ({ activeItem, onClose }) =>
 
 
             <SubMenuItem
-                $isActive={activeItem === 'structure'}
+                $isActive={activeItem === 'structure'} onClick={() => toggleDropdown('structure')}
             >
                 <StyledIconsSubMenu src={structure} alt="Structure" />
                 <SubMenuText onClick={() => toggleDropdown('structure')}>{t('installStructureText')}</SubMenuText>
-                <StyledArrowIcon src={arrowIcon} alt="Arrow Down" onClick={() => toggleDropdown('structure')} />
+                <StyledArrowIcon src={arrowIcon} alt="Arrow Down"  />
             </SubMenuItem>
 
             {openDropdown === 'structure' && (

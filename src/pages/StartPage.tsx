@@ -1,6 +1,6 @@
 import React from "react";
 import TopMenu from "../components/TopMenu";
-import StartPageOne from "../components/StartPageOne";
+import StartPageOne from "../components/StartPageOne/StartPageOne";
 
 const StartPage: React.FC = () => {
     const [isStartPageVisible, setStartPageVisible] = React.useState(true);
