@@ -40,7 +40,7 @@ import {
     Button,
     ButtonContainer,
     ButtonContainerOne,
-    CloseButton,
+    CloseButton, CloseButtonStyled,
     GreenText,
     ImagePlane,
     ImagesContainer,
@@ -184,6 +184,7 @@ const StartPageOne: React.FC<StartProps> = ({onClose}) => {
                     <StartHeader>
                         <StartText>{t('startText')}</StartText>
                         <CloseButton onClick={onClose}>{t('closeButtonLabel')}</CloseButton>
+                        <CloseButtonStyled onClick={onClose} />
                     </StartHeader>
 
                     <ImagesContainer>

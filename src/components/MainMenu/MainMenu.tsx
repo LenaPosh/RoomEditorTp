@@ -7,7 +7,6 @@ import MainHeaderIcon from "./MainHeaderIcon";
 import SubMenuFurniture from "./SubMenuFurniture";
 
 
-
 const PageContainer = styled.div`
   display: flex;
   height: 100vh;

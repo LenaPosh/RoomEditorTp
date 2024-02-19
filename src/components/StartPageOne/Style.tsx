@@ -1,5 +1,6 @@
 import styled, {css} from "styled-components";
 import {SelectCircleIcon} from "../Icon";
+import closeImg from '../../img/Close.png'
 
 export const StartPageContainer = styled.div`
   position: fixed;
@@ -12,29 +13,51 @@ export const StartPageContainer = styled.div`
   align-items: center;
   background: rgba(0, 0, 0, 0.5);
   z-index: 10;
+  @media (max-width: 780px) {
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    background: white;    
+  }
 `;
 
 export const StartPageContent = styled.div`
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   padding: 20px;
   background: #F0F1F6;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  
+  @media (max-width: 780px) {
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+  }
 `;
 
 export const StartHeader = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: -10px;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   position: relative;
+  
 `;
 
 export const TextContainer = styled.div`
   text-align: center;
   margin-bottom: 20px;
   width: 100%;
+  @media (max-width: 780px) {
+    //background-color: white;
+    padding: 0;
+  }
 `;
 
 export const StartText = styled.h1`
@@ -71,6 +94,10 @@ export const CloseButton = styled.button`
   font-weight: 600;
   line-height: normal;
   margin-left: auto;
+
+  @media (max-width: 780px) {
+    display: none;
+  }
 `;
 
 export const ButtonContainerOne = styled.div`
@@ -86,6 +113,10 @@ export const ButtonContainer = styled.div`
   margin-top: 20px;
   gap: 20px;
   width: 100%;
+  @media (max-width: 780px) {
+    //background-color: white;
+    padding: 0;
+  }
 `;
 
 export const Button = styled.button`
@@ -102,6 +133,7 @@ export const Button = styled.button`
   &:hover {    
     background-color: #709f37;
   }
+  
 `;
 
 
@@ -113,12 +145,18 @@ export const ImagePlane = styled.img<{$isSelected: boolean}>`
   transition: border-color 0.3s;
   margin: 5px;
   box-shadow: 0 4px 8px #00000040;
+  border-radius: 10px;
 
   ${({ $isSelected }) => $isSelected && selectedStyle}
   background: none;
 
   &:first-child {
     margin-left: 1px;
+  }
+  
+  @media (max-width: 780px) {
+    box-shadow: none;
+    //background-color: white;
   }
 `;
 
@@ -130,6 +168,13 @@ export const ImagesContainer = styled.div`
   overflow-x: auto;
   overflow-y: hidden;
   padding-right: 5px;
+  border-radius: 10px;
+
+  @media (max-width: 780px) {
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    
+  }
 `;
 
 export const ImagesContainerPlane = styled.div`
@@ -139,10 +184,10 @@ export const ImagesContainerPlane = styled.div`
   margin-bottom: 20px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-right: 10px;
+  padding-right: 10px;  
 
   &::-webkit-scrollbar {
-    height: 3px;
+    display: none;
   }
 
   &::-webkit-scrollbar-track {
@@ -160,9 +205,19 @@ export const ImagesContainerPlane = styled.div`
   }
 
   & {
-    scrollbar-width: thin; 
-    scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0.1);
+    scrollbar-width: none;
   }
+  @media (max-width: 780px) {
+    flex-direction: column;
+    align-items: center; 
+    overflow-x: hidden; 
+    overflow-y: auto;
+    max-height: 400px;
+    width: auto;
+    //background-color: white;
+    
+  }
+  
 `;
 
 
@@ -243,6 +298,11 @@ export const RoomOptionsContainer = styled.div`
   justify-content: space-between;
   margin: 10px 10px;
   gap: 30px;
+  @media (max-width: 780px) {
+    flex-direction: column; 
+    align-items: center;
+    gap: 10px;
+  }
 `;
 
 export const RoomOptionIcon = styled.img`
@@ -267,3 +327,26 @@ export const RoomOptionsColumn = styled.div`
   gap: 10px;
   
 `;
+
+export const CloseButtonStyled = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  
+  @media (max-width: 768px) {
+    width: 35px; 
+    height: 35px; 
+    background-image: url(${closeImg});
+    position: absolute;
+    left: 69px;
+    top: 20px;    
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    padding: 0;
+  }
+`;
+
+
+
+

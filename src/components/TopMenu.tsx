@@ -20,8 +20,11 @@ const MenuContainer = styled.div`
   background-color: #fff;
   padding: 0 20px;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
   @media (max-width: 768px) {
     display: none;
+    position: relative;
+    z-index: 70;
   }
 `;
 
@@ -72,7 +75,7 @@ const MenuRight = styled.div`
   display: flex;
   align-items: center;
   gap: 20px;
-  z-index: 1000; 
+  z-index: 15; 
   position: relative;
 `;
 
@@ -82,6 +85,7 @@ const LanguageSwitcherButton = styled.button`
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  z-index: 15;
 
   &:hover {
     background-color: #e0e0e0;
@@ -97,7 +101,9 @@ const MenuContainerMobile = styled.div`
     align-items: center;
     background-color: #fff;
     padding: 0 10px;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    //box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    z-index: 70;
+    position: relative;
   }
 `;
 
