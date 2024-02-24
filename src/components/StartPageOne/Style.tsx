@@ -298,10 +298,36 @@ export const RoomOptionsContainer = styled.div`
   justify-content: space-between;
   margin: 10px 10px;
   gap: 30px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.03);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 4px;
+    border: 2px solid transparent;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  & {
+    scrollbar-width: none;
+  }
   @media (max-width: 780px) {
     flex-direction: column; 
     align-items: center;
     gap: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 400px;
+    width: auto;
   }
 `;
 
